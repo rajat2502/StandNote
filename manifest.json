@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "StandNote",
+  "version": "0.0.1",
+  "description": "StandNote description",
+  "short_name": "StandNote",
+  "permissions": ["activeTab", "storage", "<all_urls>"],
+  "browser_action": {
+    "default_popup": "html/popup.html"
+  },
+  "icons": {}
+}
