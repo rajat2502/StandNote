@@ -1,3 +1,5 @@
+const audioCtx = new AudioContext();
+
 let chunks = [],
   recorder,
   stream,
@@ -7,23 +9,37 @@ const start = document.getElementById('start'),
   stop = document.getElementById('stop'),
   body = document.getElementsByTagName('body')[0];
 
-function startRecord() {
-  chunks = [];
-  navigator.mediaDevices
-    .getUserMedia({ audio: true })
-    .then(function (_stream) {
+function getTab() {
+  chrome.tabCapture.capture(
+    {
+      audio: true,
+      // audioConstraints: {
+      //   mandatory: {
+      //     chromeMediaSource: 'tab',
+      //   },
+      // },
+    },
+    (_stream) => {
+      const audio = new Audio();
+      audio.srcObject = _stream;
+      audio.play();
       stream = _stream;
       recorder = new MediaRecorder(stream);
+      recorder.start();
       recorder.ondataavailable = (e) => {
         chunks.push(e.data);
-        if (recorder.state == 'inactive') makeLink();
+        if (recorder.state == 'inactive') download();
       };
-    })
-    .then(() => recorder.start())
-    .catch(function (error) {});
+    }
+  );
 }
 
-function makeLink() {
+function startRecord() {
+  chunks = [];
+  getTab();
+}
+
+function download() {
   let blob = new Blob(chunks, { type: 'audio' }),
     url = URL.createObjectURL(blob),
     p = document.createElement('p'),
@@ -37,6 +53,7 @@ function makeLink() {
   p.appendChild(mt);
   p.appendChild(hf);
   body.appendChild(p);
+  // hf.click();
 }
 
 function stopRecord() {
