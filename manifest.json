@@ -1,21 +1,24 @@
 {
   "manifest_version": 2,
   "name": "StandNote",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "StandNote description",
   "short_name": "StandNote",
-  "permissions": [
-    "<all_urls>",
-    "activeTab",
-    "tabCapture",
-    "tabs",
-    "downloads",
-    "storage",
-    "identity",
-    "https://www.googleapis.com/*"
-  ],
+
+  "icons": {},
+
   "browser_action": {
     "default_popup": "html/popup.html"
   },
-  "icons": {}
+
+  "background": {
+    "scripts": ["javascript/background.js"],
+    "persistant": false
+  },
+
+  "content_scripts": [
+    { "matches": ["<all_urls>"], "js": ["javascript/detect.js"] }
+  ],
+
+  "permissions": ["<all_urls>", "tabs", "tabCapture"]
 }
