@@ -18,8 +18,13 @@ function injectHtml() {
   body.appendChild(div);
 }
 
+function deleteHtml() {
+  div.remove();
+}
+
 stopBtn.addEventListener('click', () => {
   chrome.runtime.sendMessage({ type: 'stop' });
+  deleteHtml();
 });
 pauseBtn.addEventListener('click', () => {
   chrome.runtime.sendMessage({ type: 'pause' });
