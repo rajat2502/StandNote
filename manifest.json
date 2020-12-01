@@ -5,16 +5,28 @@
   "description": "StandNote description",
   "short_name": "StandNote",
 
-  "icons": {},
+  "icons": {
+    "128": "assets/icon128.png",
+    "48": "assets/icon48.png",
+    "16": "assets/icon16.png"
+  },
 
   "browser_action": {
     "default_popup": "html/popup.html"
   },
 
   "background": {
-    "scripts": ["javascript/background.js"],
+    "scripts": ["javascript/micPermission.js", "javascript/eventPage.js"],
     "persistant": false
   },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["javascript/content.js"],
+      "css": ["css/content.css"]
+    }
+  ],
 
   "permissions": ["<all_urls>", "tabs", "tabCapture"]
 }
