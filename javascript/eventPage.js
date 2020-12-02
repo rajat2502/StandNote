@@ -1,9 +1,9 @@
 const audioContext = new AudioContext();
 const destination = audioContext.createMediaStreamDestination();
+
 const body = document.getElementsByTagName('body')[0];
 
 let chunks = [],
-  recorder,
   tabStream,
   micStream,
   tabAudio,
@@ -12,12 +12,14 @@ let chunks = [],
   audioConfig,
   recognizer,
   text = '',
-  micable = true;
+  micable = true,
+  paused = false;
 
 const constraints = {
   audio: true,
 };
 
+// azure speech configurations
 const speechConfig = SpeechSDK.SpeechConfig.fromSubscription(
   'd8ea273597624018be55d5f5dee557ab',
   'eastus'
@@ -102,10 +104,18 @@ function download() {
 }
 
 function pauseResumeRecord() {
-  if (recorder.state == 'recording') {
-    recorder.pause();
+  if (!paused) {
+    tabAudio.disconnect(destination);
+    if (micable) {
+      micAudio.disconnect(destination);
+    }
+    paused = true;
   } else {
-    recorder.resume();
+    tabAudio.connect(destination);
+    if (micable) {
+      micAudio.connect(destination);
+    }
+    paused = false;
   }
 }
 
@@ -122,13 +132,10 @@ function muteMic() {
 // stop record -> stop all the tracks
 function stopRecord() {
   micStream.getTracks().forEach((t) => t.stop());
-  tabStream.getTracks().forEach((t) => t.stop());
+  tabStream.getAudioTracks()[0].stop();
   output.getTracks().forEach((t) => t.stop());
 
   recognizer.stopContinuousRecognitionAsync();
-
-  micable = true;
-  chunks = [];
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
