@@ -38,6 +38,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     case 'record':
       injectHtml();
       break;
+    case 'data':
+      console.log(request.data);
+      break;
     default:
       break;
   }

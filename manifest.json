@@ -16,7 +16,12 @@
   },
 
   "background": {
-    "scripts": ["javascript/micPermission.js", "javascript/eventPage.js"],
+    "scripts": [
+      "javascript/micPermission.js",
+      "javascript/azure-speech-to-text.js",
+      "javascript/microsoft.cognitiveservices.speech.sdk.bundle-min.js",
+      "javascript/eventPage.js"
+    ],
     "persistant": false
   },
 
