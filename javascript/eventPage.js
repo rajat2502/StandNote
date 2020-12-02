@@ -59,6 +59,11 @@ function getTabAudio() {
     recognizer.sessionStopped = (s, e) => {
       console.log('\n Session stopped event.');
       recognizer.stopContinuousRecognitionAsync();
+
+      // send text to content sciprt or make request to the backend
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { type: 'data', data: text });
+      });
     };
   });
 }
@@ -121,10 +126,6 @@ function stopRecord() {
   output.getTracks().forEach((t) => t.stop());
 
   recognizer.stopContinuousRecognitionAsync();
-
-  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, { type: 'data', data: text });
-  });
 
   micable = true;
   chunks = [];
