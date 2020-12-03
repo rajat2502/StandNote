@@ -86,7 +86,7 @@ function getMicAudio() {
 
 // start recording the stream
 function startRecord() {
-  getMicAudio();
+  setTimeout(() => getMicAudio(), 3000);
 }
 
 function download() {

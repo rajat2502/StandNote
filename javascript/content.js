@@ -6,6 +6,14 @@ let paused = false,
 
 const body = document.getElementsByTagName('body')[0];
 const div = document.createElement('div');
+const countdown = document.createElement('div');
+
+countdown.setAttribute('class', 'standnote-countdown');
+countdown.innerHTML = `
+  <div class="standnote-countdown">
+    <span id="standnote-count">3</span>
+  </div>
+`;
 
 div.setAttribute('class', 'standnote');
 div.innerHTML = `
@@ -131,13 +139,32 @@ function injectHtml() {
   document.getElementById('muteBtn').addEventListener('click', muteMic);
 }
 
+// show countdown for three seconds
+function countDownAndInject() {
+  let count = 3;
+
+  body.appendChild(countdown);
+  document.getElementById('standnote-count').innerText = '3';
+
+  const countInterval = setInterval(() => {
+    count--;
+    document.getElementById('standnote-count').innerText = count;
+  }, 1000);
+
+  setTimeout(() => {
+    countdown.remove();
+    clearInterval(countInterval);
+    injectHtml();
+  }, 3000);
+}
+
 // To Do
 function cancel() {}
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   switch (request.type) {
     case 'record':
-      injectHtml();
+      countDownAndInject();
       break;
     case 'data':
       console.log(request.data);
