@@ -33,5 +33,7 @@
     }
   ],
 
+  "web_accessible_resources": ["assets/*"],
+
   "permissions": ["<all_urls>", "tabs", "tabCapture"]
 }

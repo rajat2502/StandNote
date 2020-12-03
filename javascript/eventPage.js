@@ -43,6 +43,8 @@ function getTabAudio() {
     audioConfig = SpeechSDK.AudioConfig.fromStreamInput(output);
     recognizer = new SpeechSDK.SpeechRecognizer(speechConfig, audioConfig);
 
+    console.log(recognizer, tabStream, micStream, output);
+
     recognizer.startContinuousRecognitionAsync();
 
     recognizer.recognizing = (s, e) =>

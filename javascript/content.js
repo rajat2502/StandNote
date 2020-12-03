@@ -1,7 +1,10 @@
+let paused = false,
+  muted = false;
+
 const body = document.getElementsByTagName('body')[0];
-const stopBtn = document.createElement('button'),
-  pauseBtn = document.createElement('button'),
-  muteBtn = document.createElement('button');
+const stopBtn = document.createElement('img'),
+  pauseBtn = document.createElement('img'),
+  muteBtn = document.createElement('img');
 
 const div = document.createElement('div');
 
@@ -10,9 +13,14 @@ div.appendChild(stopBtn);
 div.appendChild(pauseBtn);
 div.appendChild(muteBtn);
 
-stopBtn.innerText = 'Stop Record';
-pauseBtn.innerText = 'Pause Record';
-muteBtn.innerText = 'Mute Record';
+stopBtn.src = chrome.extension.getURL('./assets/done.png');
+stopBtn.title = 'Generate MoM';
+
+pauseBtn.src = chrome.extension.getURL('./assets/paused.png');
+pauseBtn.title = 'Pause';
+
+muteBtn.src = chrome.extension.getURL('./assets/mic-play.png');
+muteBtn.title = 'Mute microphone';
 
 function injectHtml() {
   body.appendChild(div);
@@ -26,11 +34,33 @@ stopBtn.addEventListener('click', () => {
   chrome.runtime.sendMessage({ type: 'stop' });
   deleteHtml();
 });
+
 pauseBtn.addEventListener('click', () => {
   chrome.runtime.sendMessage({ type: 'pause' });
+
+  if (!paused) {
+    pauseBtn.title = 'Play';
+    pauseBtn.src = chrome.extension.getURL('./assets/play.png');
+    paused = true;
+  } else {
+    pauseBtn.title = 'Pause';
+    pauseBtn.src = chrome.extension.getURL('./assets/paused.png');
+    paused = false;
+  }
 });
+
 muteBtn.addEventListener('click', () => {
   chrome.runtime.sendMessage({ type: 'mute' });
+
+  if (!muted) {
+    muteBtn.title = 'Unmute Microphone';
+    muteBtn.src = chrome.extension.getURL('./assets/mic-paused.png');
+    muted = true;
+  } else {
+    muteBtn.title = 'Mute microphone';
+    muteBtn.src = chrome.extension.getURL('./assets/mic-play.png');
+    muted = false;
+  }
 });
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
