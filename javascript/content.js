@@ -2,41 +2,50 @@ let paused = false,
   muted = false;
 
 const body = document.getElementsByTagName('body')[0];
-const stopBtn = document.createElement('img'),
-  pauseBtn = document.createElement('img'),
-  muteBtn = document.createElement('img');
-
 const div = document.createElement('div');
 
 div.setAttribute('class', 'standnote-buttons');
-div.appendChild(stopBtn);
-div.appendChild(pauseBtn);
-div.appendChild(muteBtn);
+div.innerHTML = `
+  <div>
+    <img id="stopBtn" title="Generate MoM" src=${chrome.extension.getURL(
+      './assets/done.png'
+    )} />
+    <img id="pauseBtn" title="Pause" src=${chrome.extension.getURL(
+      './assets/paused.png'
+    )} />
+    <img id="muteBtn" title="Mute microphone" src=${chrome.extension.getURL(
+      './assets/mic-play.png'
+    )} />
+  </div>
+`;
 
-stopBtn.src = chrome.extension.getURL('./assets/done.png');
-stopBtn.title = 'Generate MoM';
+function setToDefault() {
+  paused = false;
+  muted = false;
 
-pauseBtn.src = chrome.extension.getURL('./assets/paused.png');
-pauseBtn.title = 'Pause';
-
-muteBtn.src = chrome.extension.getURL('./assets/mic-play.png');
-muteBtn.title = 'Mute microphone';
-
-function injectHtml() {
   body.appendChild(div);
+
+  document.getElementById('pauseBtn').title = 'Pause';
+  document.getElementById('pauseBtn').src = chrome.extension.getURL(
+    './assets/paused.png'
+  );
+  paused = false;
+
+  document.getElementById('muteBtn').title = 'Mute microphone';
+  document.getElementById('muteBtn').src = chrome.extension.getURL(
+    './assets/mic-play.png'
+  );
+  muted = false;
 }
 
-function deleteHtml() {
+function generateMoM() {
+  chrome.runtime.sendMessage({ type: 'stop' });
   div.remove();
 }
 
-stopBtn.addEventListener('click', () => {
-  chrome.runtime.sendMessage({ type: 'stop' });
-  deleteHtml();
-});
-
-pauseBtn.addEventListener('click', () => {
+function pause() {
   chrome.runtime.sendMessage({ type: 'pause' });
+  const pauseBtn = document.getElementById('pauseBtn');
 
   if (!paused) {
     pauseBtn.title = 'Play';
@@ -47,10 +56,11 @@ pauseBtn.addEventListener('click', () => {
     pauseBtn.src = chrome.extension.getURL('./assets/paused.png');
     paused = false;
   }
-});
+}
 
-muteBtn.addEventListener('click', () => {
+function muteMic() {
   chrome.runtime.sendMessage({ type: 'mute' });
+  const muteBtn = document.getElementById('muteBtn');
 
   if (!muted) {
     muteBtn.title = 'Unmute Microphone';
@@ -61,7 +71,15 @@ muteBtn.addEventListener('click', () => {
     muteBtn.src = chrome.extension.getURL('./assets/mic-play.png');
     muted = false;
   }
-});
+}
+
+function injectHtml() {
+  setToDefault();
+
+  document.getElementById('stopBtn').addEventListener('click', generateMoM);
+  document.getElementById('pauseBtn').addEventListener('click', pause);
+  document.getElementById('muteBtn').addEventListener('click', muteMic);
+}
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   switch (request.type) {
