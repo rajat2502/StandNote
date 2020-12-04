@@ -62,7 +62,10 @@ function setToDefaultAndInject() {
 // stop timer and generate the minutes of the meeting.
 function generateMoM() {
   chrome.runtime.sendMessage({ type: 'stop' });
+  resetScript();
+}
 
+function resetScript() {
   stopTimer();
   div.remove();
 }
@@ -137,6 +140,7 @@ function injectHtml() {
   document.getElementById('stopBtn').addEventListener('click', generateMoM);
   document.getElementById('pauseBtn').addEventListener('click', pause);
   document.getElementById('muteBtn').addEventListener('click', muteMic);
+  document.getElementById('standnote-cancel').addEventListener('click', cancel);
 }
 
 // show countdown for three seconds
@@ -158,8 +162,11 @@ function countDownAndInject() {
   }, 3000);
 }
 
-// To Do
-function cancel() {}
+// Cancel stream and remove injected content
+function cancel() {
+  resetScript();
+  chrome.runtime.sendMessage({ type: 'cancel' });
+}
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   switch (request.type) {

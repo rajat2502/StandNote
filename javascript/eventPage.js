@@ -69,12 +69,16 @@ function getTabAudio() {
           { type: 'data', data: text },
           () => {
             // reload the background script to reset the variables
-            chrome.extension.getBackgroundPage().window.location.reload();
+            reloadBackgroundScript();
           }
         );
       });
     };
   });
+}
+
+function reloadBackgroundScript() {
+  chrome.extension.getBackgroundPage().window.location.reload();
 }
 
 // get mic audio
@@ -140,6 +144,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       break;
     case 'mute':
       muteMic();
+      break;
+    case 'cancel':
+      reloadBackgroundScript();
       break;
     default:
       break;
