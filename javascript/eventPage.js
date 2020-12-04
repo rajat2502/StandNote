@@ -64,7 +64,14 @@ function getTabAudio() {
 
       // send text to content sciprt or make request to the backend
       chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, { type: 'data', data: text });
+        chrome.tabs.sendMessage(
+          tabs[0].id,
+          { type: 'data', data: text },
+          () => {
+            // reload the background script to reset the variables
+            chrome.extension.getBackgroundPage().window.location.reload();
+          }
+        );
       });
     };
   });
