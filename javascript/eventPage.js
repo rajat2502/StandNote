@@ -1,10 +1,7 @@
 const audioContext = new AudioContext();
 const destination = audioContext.createMediaStreamDestination();
 
-const body = document.getElementsByTagName('body')[0];
-
-let chunks = [],
-  tabStream,
+let tabStream,
   micStream,
   tabAudio,
   micAudio,
@@ -24,6 +21,7 @@ const speechConfig = SpeechSDK.SpeechConfig.fromSubscription(
   'd8ea273597624018be55d5f5dee557ab',
   'eastus'
 );
+speechConfig.speechRecognitionLanguage = 'en-IN';
 
 // get tab audio
 function getTabAudio() {
@@ -43,7 +41,7 @@ function getTabAudio() {
     audioConfig = SpeechSDK.AudioConfig.fromStreamInput(output);
     recognizer = new SpeechSDK.SpeechRecognizer(speechConfig, audioConfig);
 
-    console.log(recognizer, tabStream, micStream, output);
+    console.log(recognizer);
 
     recognizer.startContinuousRecognitionAsync();
 
@@ -79,7 +77,6 @@ function getMicAudio() {
     micAudio = audioContext.createMediaStreamSource(micStream);
     micAudio.connect(destination);
 
-    // get tab audio
     getTabAudio();
   });
 }
@@ -87,22 +84,6 @@ function getMicAudio() {
 // start recording the stream
 function startRecord() {
   setTimeout(() => getMicAudio(), 3000);
-}
-
-function download() {
-  let blob = new Blob(chunks, { type: 'audio' }),
-    url = URL.createObjectURL(blob),
-    audio = document.createElement('audio'),
-    a = document.createElement('a');
-  audio.controls = true;
-  audio.src = url;
-  a.href = url;
-  a.download = `audio.mp3`;
-  a.innerHTML = `download ${a.download}`;
-  a.appendChild(audio);
-  body.appendChild(a);
-  a.click();
-  delete a;
 }
 
 function pauseResumeRecord() {
@@ -134,8 +115,7 @@ function muteMic() {
 // stop record -> stop all the tracks
 function stopRecord() {
   micStream.getTracks().forEach((t) => t.stop());
-  tabStream.getAudioTracks()[0].stop();
-  output.getTracks().forEach((t) => t.stop());
+  tabStream.getTracks().forEach((t) => t.stop());
 
   recognizer.stopContinuousRecognitionAsync();
 }
