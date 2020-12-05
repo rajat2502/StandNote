@@ -9,6 +9,7 @@ let tabStream,
   audioConfig,
   recognizer,
   text = '',
+  score = 0,
   micable = true,
   paused = false;
 
@@ -18,10 +19,11 @@ const constraints = {
 
 // azure speech configurations
 const speechConfig = SpeechSDK.SpeechConfig.fromSubscription(
-  'd8ea273597624018be55d5f5dee557ab',
+  '4bc1dcdc604e4e0bb10b90fd93696fc3 ',
   'eastus'
 );
 speechConfig.speechRecognitionLanguage = 'en-IN';
+speechConfig.outputFormat = 1;
 
 // get tab audio
 function getTabAudio() {
@@ -41,8 +43,6 @@ function getTabAudio() {
     audioConfig = SpeechSDK.AudioConfig.fromStreamInput(output);
     recognizer = new SpeechSDK.SpeechRecognizer(speechConfig, audioConfig);
 
-    console.log(recognizer);
-
     recognizer.startContinuousRecognitionAsync();
 
     recognizer.recognizing = (s, e) =>
@@ -50,7 +50,7 @@ function getTabAudio() {
 
     recognizer.recognized = (s, e) => {
       text += e.result.text;
-      console.log(text);
+      score = Math.max(score, JSON.parse(e.result.json).NBest[0].Confidence);
     };
 
     recognizer.canceled = (s, e) => {
@@ -62,17 +62,11 @@ function getTabAudio() {
       console.log('\n Session stopped event.');
       recognizer.stopContinuousRecognitionAsync();
 
-      // send text to content sciprt or make request to the backend
-      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        chrome.tabs.sendMessage(
-          tabs[0].id,
-          { type: 'data', data: text.replace('undefined', '') },
-          () => {
-            // reload the background script to reset the variables
-            reloadBackgroundScript();
-          }
-        );
-      });
+      const newWindow = window.open('../html/textEditor.html');
+      newWindow.text = text.replace('undefined', '');
+      newWindow.confidenceScore = (100 * score).toFixed(2);
+      // reload the background script to reset the variables
+      reloadBackgroundScript();
     };
   });
 }
