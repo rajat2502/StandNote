@@ -50,7 +50,11 @@ function getTabAudio() {
 
     recognizer.recognized = (s, e) => {
       text += e.result.text;
-      score = Math.max(score, JSON.parse(e.result.json).NBest[0].Confidence);
+      if (score == 0) {
+        score = Math.max(score, JSON.parse(e.result.json).NBest[0].Confidence);
+      } else {
+        score = (score + JSON.parse(e.result.json).NBest[0].Confidence) / 2;
+      }
     };
 
     recognizer.canceled = (s, e) => {

@@ -2,6 +2,9 @@ body {
   margin: 0;
   background: #efefef;
   font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .navbar {
@@ -27,7 +30,7 @@ body {
 
 h1 {
   margin: 30px;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #4b4b4b;
   text-align: center;
   letter-spacing: 0.12ch;
@@ -88,4 +91,20 @@ p {
   font-weight: bold;
   font-size: 2.4rem;
   color: #41ac67;
+}
+
+.message {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  display: none;
+}
+
+.message img {
+  width: 100px;
+}
+
+.message h1 {
+  letter-spacing: normal;
+  margin: 10px;
 }
