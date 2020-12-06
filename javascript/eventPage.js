@@ -65,6 +65,7 @@ function getTabAudio() {
     recognizer.sessionStopped = (s, e) => {
       console.log('\n Session stopped event.');
       recognizer.stopContinuousRecognitionAsync();
+      chrome.browserAction.setIcon({ path: '../assets/icon48.png' });
 
       const newWindow = window.open('../html/textEditor.html');
       newWindow.text = text.replace('undefined', '');
@@ -92,7 +93,10 @@ function getMicAudio() {
 
 // start recording the stream
 function startRecord() {
-  setTimeout(() => getMicAudio(), 3000);
+  setTimeout(() => {
+    chrome.browserAction.setIcon({ path: '../assets/icon_red.png' });
+    getMicAudio();
+  }, 3000);
 }
 
 function pauseResumeRecord() {

@@ -36,5 +36,7 @@
 
   "web_accessible_resources": ["assets/*"],
 
+  "content_security_policy": "script-src 'self' https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js; object-src 'self'",
+
   "permissions": ["<all_urls>", "tabs", "tabCapture"]
 }

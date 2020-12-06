@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StandNote Meeting Text</title>
+    <title>StandNote - Edit your Meeting Text</title>
     <link rel="stylesheet" href="../css/textEditor.css" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </head>
   <body>
     <div class="navbar">
@@ -12,14 +13,14 @@
     </div>
     <div class="content">
       <div>
-        <h1>Meeting Speech's Text</h1>
+        <h1>Meeting Conversation's Text</h1>
         <textarea
           id="meetingText"
           placeholder="(Meeting text should appear hear)"
         ></textarea>
       </div>
       <div class="right-content">
-        <p>Confidence Score: <span id="score"></span></p>
+        <p>Confidence Score: &nbsp;<span id="score"></span></p>
         <span style="color: #585858"
           >(A confidence score is a value between 0-100, it tells us how
           effective our algorithms are working. The higher the score, the
@@ -29,11 +30,19 @@
       </div>
     </div>
     <div class="message">
-      <img src="../assets/checkmark.png" alt="checkmark" />
+      <lottie-player
+        src="https://assets4.lottiefiles.com/packages/lf20_pmYw5P.json"
+        background="transparent"
+        speed="0.5"
+        style="width: 250px; height: 250px"
+        autoplay
+      ></lottie-player>
       <h1>Hey there, Thanks for using StandNote &#128516;</h1>
-      <p>
+      <p style="line-height: 1.5">
         We've recieved your meeting's text. We'll notify you once your meeting
         notes are ready!
+        <br />
+        Till then, Happy Meetings :)
       </p>
     </div>
     <script src="../javascript/textEditor.js"></script>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
 body {
   margin: 0;
   background: #efefef;
@@ -5,6 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .navbar {
@@ -33,7 +36,7 @@ h1 {
   font-size: 2.2rem;
   color: #4b4b4b;
   text-align: center;
-  letter-spacing: 0.12ch;
+  letter-spacing: 0.1ch;
 }
 
 textarea {
@@ -84,13 +87,20 @@ button:hover {
 p {
   font-size: 1.4rem;
   color: #686868;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 #score {
   font-weight: bold;
   font-size: 2.4rem;
+}
+
+.good {
   color: #41ac67;
+}
+
+.bad {
+  color: #d44444;
 }
 
 .message {
@@ -100,11 +110,11 @@ p {
   display: none;
 }
 
-.message img {
-  width: 100px;
-}
-
 .message h1 {
   letter-spacing: normal;
   margin: 10px;
+}
+
+lottie-player {
+  margin: auto;
 }
