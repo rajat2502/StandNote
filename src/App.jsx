@@ -12,14 +12,14 @@ function App() {
   return (
     <div>
       <Router>
-        <Navbar />
+        {/* <Navbar /> */}
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/dashboard' exact component={Dashboard} />
           <Route path='/register' exact component={SignUp} />
           <Route path='/login' exact component={Login} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );
