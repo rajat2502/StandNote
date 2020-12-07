@@ -20,7 +20,7 @@ p {
   display: block;
 }
 
-#start-record {
+.action-buttons {
   padding: 8px 14px;
   width: 100%;
   color: #fff;
@@ -34,18 +34,53 @@ p {
   transition: all 0.5s;
 }
 
-#start-record:focus {
+.action-buttons:focus {
   outline: none;
 }
 
-#start-record:hover {
+.action-buttons:hover {
   background: #166738;
 }
 
-#start-record:disabled {
+.action-buttons:disabled {
   opacity: 0.65;
 }
 
-#start-record:disabled:hover {
+.action-buttons:disabled:hover {
   background: #1b8045;
+}
+
+form {
+  margin: 10px;
+}
+
+form > div {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+form span {
+  color: #4a4a4a;
+  font-weight: 600;
+  margin: 4px 0;
+}
+
+.form-input {
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #acacac;
+}
+
+.form-input:hover {
+  border-color: #7b7b7b;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #727272;
+}
+
+#submit {
+  margin: 12px 0;
 }

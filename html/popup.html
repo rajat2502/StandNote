@@ -9,11 +9,43 @@
     <a href="#">
       <img src="../assets/logo.png" class="logo" />
     </a>
-    <p>
-      StandNote is your easy to use online meeting assistant that backs you up
-      with automated meeting minutes for every conversation.
-    </p>
-    <button id="start-record">Generate Meeting Notes</button>
+    <div class="login">
+      <form>
+        <div>
+          <span>Email Address</span>
+          <input
+            class="form-input"
+            type="text"
+            placeholder="Enter your Email Address"
+          />
+        </div>
+        <div>
+          <span>Password</span>
+          <input
+            class="form-input"
+            type="password"
+            placeholder="Enter your Password"
+          />
+        </div>
+        <input
+          class="action-buttons"
+          type="submit"
+          id="submit"
+          value="Sign In"
+        />
+        <span style="font-weight: 100; font-size: 0.94rem"
+          >Don't have an account?
+          <a href="#" target="_blank">Create Now!</a></span
+        >
+      </form>
+    </div>
+    <!-- <div class="content">
+      <p>
+        StandNote is your easy to use online meeting assistant that backs you up
+        with automated meeting minutes for every conversation.
+      </p>
+      <button class="action-buttons" id="start-record">Generate Meeting Notes</button>
+    </div> -->
 
     <script src="../javascript/popup.js"></script>
   </body>
