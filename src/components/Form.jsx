@@ -26,12 +26,15 @@ function Form({ formButton }) {
         type='submit'
         value={formButton}
       />
-      <p className='text-gray-600 w-full my-2 text-center'>OR</p>
-      <button className='font-bold rounded-sm focus:outline-none w-full border border-blue-500 flex justify-center items-center'>
+      <p className='text-sm text-gray-600 w-full my-2 text-center'>OR</p>
+      <button
+        className='font-bold rounded-sm focus:outline-none w-full border border-blue-500 flex justify-center items-center'
+        style={{ height: 48 }}
+      >
         &nbsp;&nbsp;&nbsp;
         <Icon name='google' width='32' />
         &nbsp;&nbsp;&nbsp;
-        <span className='w-full bg-blue-500 text-white p-3'>
+        <span className='w-full bg-blue-500 text-white h-full flex items-center justify-center'>
           Continue with Google
         </span>
       </button>

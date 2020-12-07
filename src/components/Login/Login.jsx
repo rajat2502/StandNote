@@ -18,6 +18,12 @@ function Login() {
           />
         </Link>
         <Form formButton='Sign In' />
+        <p className='block text-gray-600 mt-2 text-left'>
+          Don't have an Account?{' '}
+          <Link className='text-blue-600' to='/register'>
+            Create Now!
+          </Link>
+        </p>
       </div>
     </div>
   );

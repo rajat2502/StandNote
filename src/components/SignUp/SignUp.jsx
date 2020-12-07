@@ -18,6 +18,12 @@ function SignUp() {
           />
         </Link>
         <Form formButton='Create Account' />
+        <p className='block text-gray-600 mt-2 text-left'>
+          Already have an Account?{' '}
+          <Link className='text-blue-600' to='/login'>
+            Login!
+          </Link>
+        </p>
       </div>
     </div>
   );
