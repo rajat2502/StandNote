@@ -17,8 +17,8 @@ function Login() {
             alt='Standnote'
           />
         </Link>
-        <Form formButton='Sign In' />
-        <p className='block text-gray-600 mt-2 text-left'>
+        <Form formType='login' formButton='Sign In' />
+        <p className='text-sm block text-gray-600 mt-2 text-left'>
           Don't have an Account?{' '}
           <Link className='text-blue-600' to='/register'>
             Create Now!

@@ -17,11 +17,11 @@ function SignUp() {
             alt='Standnote'
           />
         </Link>
-        <Form formButton='Create Account' />
-        <p className='block text-gray-600 mt-2 text-left'>
+        <Form formType='signup' formButton='Create Account' />
+        <p className='text-sm block text-gray-600 mt-2 text-left'>
           Already have an Account?{' '}
           <Link className='text-blue-600' to='/login'>
-            Login!
+            Login Now!
           </Link>
         </p>
       </div>
