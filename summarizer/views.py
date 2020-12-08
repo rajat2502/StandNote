@@ -6,6 +6,8 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.cluster.util import cosine_distance
 from rest_framework.response import Response
+from django.core.mail import send_mail
+from standnote.settings import EMAIL_HOST_USER
 
 STOP_WORDS = []
 try:
@@ -281,4 +283,9 @@ class MyView(APIView):
         summerised_text, ranked_sentences = summ.generate_summary(
             request.data.get(
                 'text'), request.data.get('max_sentences'))
-        return Response(data={"my_return_data": summerised_text})
+        subject = 'Welcome to StandNote!'
+        message = "Here's your standup meeting notes\n" + summerised_text
+        recepient = request.data.get('email')
+        send_mail(subject, message, EMAIL_HOST_USER,
+                  [recepient], fail_silently=False)
+        return Response(data={"summerised_text": summerised_text})
