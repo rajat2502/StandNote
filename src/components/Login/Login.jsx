@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import Form from 'components/Form';
 
-function Login() {
+function Login({ user, setUser }) {
+  if (user.email) return <Redirect to='/dashboard' />;
+
   return (
     <div className='flex justify-center items-center w-full h-screen bg-gray-200'>
       <div
-        className='m-4 w-full sm:w-2/3 rounded-md shadow-lg	flex justify-center items-center flex-col bg-white p-12'
+        className='m-4 w-full sm:w-2/3 rounded-md shadow-lg	flex justify-center items-center flex-col bg-white p-8 sm:p-12'
         style={{ maxWidth: 450 }}
       >
         <Link to='/'>
@@ -17,7 +19,7 @@ function Login() {
             alt='Standnote'
           />
         </Link>
-        <Form formType='login' formButton='Sign In' />
+        <Form formType='login' formButton='Sign In' setUser={setUser} />
         <p className='text-sm block text-gray-600 mt-2 text-left'>
           Don't have an Account?{' '}
           <Link className='text-blue-600' to='/register'>
