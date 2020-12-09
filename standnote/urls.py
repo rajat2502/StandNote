@@ -4,6 +4,7 @@ from django.conf.urls import url
 from summarizer import views
 from social_login.views import FacebookLogin, GoogleLogin
 from allauth.account.views import confirm_email
+from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
     path('admin/', admin.site.urls),
