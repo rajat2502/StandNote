@@ -42,25 +42,21 @@ p {
   background: #166738;
 }
 
-.action-buttons:disabled {
-  opacity: 0.65;
-}
-
 .action-buttons:disabled:hover {
   background: #1b8045;
 }
 
-form {
+.form {
   margin: 10px;
 }
 
-form > div {
+.form > div {
   margin: 5px 0;
   display: flex;
   flex-direction: column;
 }
 
-form span {
+.form span {
   color: #4a4a4a;
   font-weight: 600;
   margin: 4px 0;
@@ -83,4 +79,66 @@ form span {
 
 #submit {
   margin: 12px 0;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  height: 37px;
+  width: 100%;
+  color: #fff;
+  border: 1px solid #4285f4;
+  padding: 0;
+  cursor: pointer;
+  margin: 4px 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.google-btn:focus {
+  outline: none;
+}
+
+.google-btn img {
+  height: 80%;
+  margin: 6px;
+}
+
+.google-btn span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #4285f4;
+  color: #fff;
+  margin: 0;
+}
+
+input:disabled,
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+#content,
+#conent-buttons,
+#login {
+  display: none;
+}
+
+.details {
+  font-size: 0.75rem;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  color: #545454;
+}
+
+#logOut {
+  padding: 0;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
 }
