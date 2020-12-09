@@ -1,7 +1,7 @@
 let meetingText = window.text,
   title;
 const email = window.email;
-const duration = window.duration;
+const meetingDuration = window.duration;
 
 document.getElementById('duration').innerText = duration;
 
@@ -26,15 +26,26 @@ document
   .getElementById('submit-meeting-details')
   .addEventListener('submit', (e) => {
     e.preventDefault();
+
+    document.getElementById('sendText').disabled = true;
+
+    title = document.getElementById('title').value;
+
     const body = {
       email,
-      duration,
+      duration: meetingDuration,
       title,
-      text: meetingText,
+      content: meetingText,
+      markdown: '',
     };
 
-    fetch('https://standnote.herokuapp.com/summarizer/', {
-      method: 'POST',
+    console.log(body);
+
+    fetch('http://standnote.herokuapp.com/notes/', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(body),
     })
       .then((res) => res.json())
@@ -42,5 +53,8 @@ document
         document.getElementsByClassName('content')[0].style.display = 'none';
         document.getElementsByClassName('message')[0].style.display = 'block';
         document.title = 'StandNote - Thanks for using StandNote';
+      })
+      .catch((err) => {
+        document.getElementById('sendText').disabled = false;
       });
   });

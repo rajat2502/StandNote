@@ -16,8 +16,6 @@ function login() {
 
   disableButtons();
 
-  console.log({ email, password });
-
   fetch('https://standnote.herokuapp.com/rest-auth/login/', {
     method: 'POST',
     headers: {
@@ -117,7 +115,7 @@ function addRecordListener() {
 function showRecordScreen(email) {
   document.getElementById('login').style.display = 'none';
   document.getElementById('content').style.display = 'block';
-  document.getElementById('conent-buttons').style.display = 'block';
+  document.getElementById('content-buttons').style.display = 'block';
   document.getElementById('emailID').innerText = email;
   addRecordListener();
 }
@@ -125,7 +123,7 @@ function showRecordScreen(email) {
 function showLoginScreen() {
   document.getElementById('login').style.display = 'block';
   document.getElementById('content').style.display = 'none';
-  document.getElementById('conent-buttons').style.display = 'none';
+  document.getElementById('content-buttons').style.display = 'none';
 }
 
 function addLoginListeners() {

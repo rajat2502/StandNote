@@ -136,3 +136,12 @@ form input:focus {
   outline: none;
   border-color: #727272;
 }
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  background: #1b8045;
+}
