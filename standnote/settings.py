@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_auth',
     'summarizer',
+    'notes',
     # for social login
     'django.contrib.sites',
     'allauth',
@@ -74,6 +75,7 @@ MIDDLEWARE = [
 ]
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'standnote.urls'
