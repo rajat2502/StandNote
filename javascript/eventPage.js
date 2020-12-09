@@ -11,7 +11,9 @@ let tabStream,
   text = '',
   score = 0,
   micable = true,
-  paused = false;
+  paused = false,
+  email,
+  duration;
 
 const constraints = {
   audio: true,
@@ -69,6 +71,8 @@ function getTabAudio() {
 
       const newWindow = window.open('../html/textEditor.html');
       newWindow.text = text.replace('undefined', '');
+      newWindow.email = email;
+      newWindow.duration = duration;
       newWindow.confidenceScore = (100 * score).toFixed(2);
       // reload the background script to reset the variables
       reloadBackgroundScript();
@@ -126,12 +130,17 @@ function muteMic() {
 }
 
 // stop record -> stop all the tracks
-function stopRecord() {
+function stopRecord(totalTime) {
   micStream.getTracks().forEach((t) => t.stop());
   tabStream.getTracks().forEach((t) => t.stop());
+  duration = totalTime;
 
   recognizer.stopContinuousRecognitionAsync();
 }
+
+chrome.storage.sync.get('email', (data) => {
+  email = data.email;
+});
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   switch (request.type) {
@@ -139,7 +148,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       startRecord();
       break;
     case 'stop':
-      stopRecord();
+      stopRecord(request.duration);
       break;
     case 'pause':
       pauseResumeRecord();

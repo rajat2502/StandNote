@@ -38,7 +38,14 @@
 
   "content_security_policy": "script-src 'self' https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js; object-src 'self'",
 
-  "permissions": ["storage", "identity", "<all_urls>", "tabs", "tabCapture"],
+  "permissions": [
+    "storage",
+    "identity",
+    "<all_urls>",
+    "https://standnote.herokuapp.com/*",
+    "tabs",
+    "tabCapture"
+  ],
 
   "oauth2": {
     "client_id": "337386111803-7o99c71aahdhtkffc5q0c316a4btgn48.apps.googleusercontent.com",

@@ -121,6 +121,10 @@ button:disabled {
   cursor: not-allowed;
 }
 
+button:focus {
+  outline: none;
+}
+
 #content,
 #conent-buttons,
 #login {

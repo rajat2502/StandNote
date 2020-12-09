@@ -1,3 +1,5 @@
+let email;
+
 function disableButtons() {
   document.getElementById('submit').disabled = true;
   document.getElementById('google-btn').disabled = true;
@@ -14,6 +16,8 @@ function login() {
 
   disableButtons();
 
+  console.log({ email, password });
+
   fetch('https://standnote.herokuapp.com/rest-auth/login/', {
     method: 'POST',
     headers: {
@@ -21,12 +25,18 @@ function login() {
     },
     body: JSON.stringify({ email, password }),
   })
-    .then((res) => res.json())
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error('Something went wrong');
+      }
+    })
     .then((data) => {
       chrome.storage.sync.set({ key: data.key });
       chrome.storage.sync.set({ email });
       enableButtons();
-      showRecordScreen();
+      showRecordScreen(email);
     })
     .catch((err) => {
       console.log(err);
@@ -45,7 +55,10 @@ function googleLogin() {
       `https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${token}`
     )
       .then((res) => res.json())
-      .then((data) => chrome.storage.sync.set({ email: data.email }));
+      .then((data) => {
+        email = data.email;
+        chrome.storage.sync.set({ email: data.email });
+      });
 
     const body = JSON.stringify({ access_token: token });
 
@@ -56,12 +69,17 @@ function googleLogin() {
       },
       body,
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error('Something went wrong');
+        }
+      })
       .then((data) => {
         chrome.storage.sync.set({ key: data.key });
-        console.log(data);
         enableButtons();
-        showRecordScreen();
+        showRecordScreen(email);
       })
       .catch((err) => {
         console.log(err);
@@ -104,14 +122,29 @@ function showRecordScreen(email) {
   addRecordListener();
 }
 
+function showLoginScreen() {
+  document.getElementById('login').style.display = 'block';
+  document.getElementById('content').style.display = 'none';
+  document.getElementById('conent-buttons').style.display = 'none';
+}
+
+function addLoginListeners() {
+  document.getElementById('submit').addEventListener('click', login);
+  document.getElementById('google-btn').addEventListener('click', googleLogin);
+}
+
 chrome.storage.sync.get('email', (data) => {
-  if (data.email) {
+  if (!data.email) {
     document.getElementById('login').style.display = 'block';
-    document.getElementById('submit').addEventListener('click', login);
-    document
-      .getElementById('google-btn')
-      .addEventListener('click', googleLogin);
+    addLoginListeners();
   } else {
     showRecordScreen(data.email);
   }
+});
+
+document.getElementById('logOut').addEventListener('click', () => {
+  chrome.storage.sync.clear(() => {
+    showLoginScreen();
+    addLoginListeners();
+  });
 });

@@ -61,7 +61,12 @@ function setToDefaultAndInject() {
 
 // stop timer and generate the minutes of the meeting.
 function generateMoM() {
-  chrome.runtime.sendMessage({ type: 'stop' });
+  chrome.runtime.sendMessage({
+    type: 'stop',
+    duration: `${document.getElementById('minutes').innerText}:${
+      document.getElementById('seconds').innerText
+    }`,
+  });
   resetScript();
 }
 
@@ -172,9 +177,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   switch (request.type) {
     case 'record':
       countDownAndInject();
-      break;
-    case 'data':
-      console.log(request.data);
       break;
     default:
       break;

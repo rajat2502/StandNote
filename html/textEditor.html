@@ -19,15 +19,27 @@
           placeholder="(Meeting text should appear hear)"
         ></textarea>
       </div>
-      <div class="right-content">
+      <form id="submit-meeting-details" class="right-content">
+        <p>
+          Meeting's Agenda:&nbsp;
+          <input
+            type="text"
+            name="meeting-agenda"
+            placeholder="Please enter the agenda of the meeting"
+            required
+          />
+        </p>
         <p>Confidence Score: &nbsp;<span id="score"></span></p>
-        <span style="color: #585858"
+        <span style="color: #585858; margin-left: 10px"
           >(A confidence score is a value between 0-100, it tells us how
           effective our algorithms are working. The higher the score, the
           efficient the algorithms.)</span
         >
-        <button id="sendText">Generate Notes for the Meeting</button>
-      </div>
+        <p>Meeting's Duration: &nbsp;<span id="duration"></span></p>
+        <button type="submit" id="sendText">
+          Generate Notes for the Meeting
+        </button>
+      </form>
     </div>
     <div class="message">
       <lottie-player
