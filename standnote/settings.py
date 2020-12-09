@@ -79,9 +79,9 @@ CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'standnote.urls'
 CSRF_COOKIE_HTTPONLY = False
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
-    )
+    ]
 }
 TEMPLATES = [
     {
@@ -112,10 +112,10 @@ DATABASES = {
     }
 }
 
-# AUTHENTICATION_BACKENDS = (
-#     "django.contrib.auth.backends.ModelBackend",
-#     "allauth.account.auth_backends.AuthenticationBackend",
-# )
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
