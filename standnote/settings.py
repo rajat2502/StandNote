@@ -78,7 +78,10 @@ ACCOUNT_USERNAME_REQUIRED = False
 CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'standnote.urls'
 CSRF_COOKIE_HTTPONLY = False
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+    ]
+}
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
