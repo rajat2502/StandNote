@@ -69,11 +69,14 @@ function getTabAudio() {
       recognizer.stopContinuousRecognitionAsync();
       chrome.browserAction.setIcon({ path: '../assets/icon48.png' });
 
-      const newWindow = window.open('../html/textEditor.html');
-      newWindow.text = text.replace('undefined', '');
-      newWindow.email = email;
-      newWindow.duration = duration;
-      newWindow.confidenceScore = (100 * score).toFixed(2);
+      chrome.storage.sync.get('email', (data) => {
+        const newWindow = window.open('../html/textEditor.html');
+        newWindow.text = text.replace('undefined', '');
+        newWindow.email = data.email;
+        newWindow.duration = duration;
+        newWindow.confidenceScore = (100 * score).toFixed(2);
+      });
+
       // reload the background script to reset the variables
       reloadBackgroundScript();
     };
@@ -137,10 +140,6 @@ function stopRecord(totalTime) {
 
   recognizer.stopContinuousRecognitionAsync();
 }
-
-chrome.storage.sync.get('email', (data) => {
-  email = data.email;
-});
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   switch (request.type) {

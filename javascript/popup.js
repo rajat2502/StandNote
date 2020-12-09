@@ -142,7 +142,6 @@ chrome.storage.sync.get('email', (data) => {
 
 document.getElementById('logOut').addEventListener('click', () => {
   chrome.storage.sync.clear(() => {
-    showLoginScreen();
-    addLoginListeners();
+    window.close();
   });
 });

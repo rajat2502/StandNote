@@ -37,6 +37,7 @@ document
       title,
       content: meetingText,
       markdown: '',
+      score: window.confidenceScore,
     };
 
     console.log(body);
@@ -48,7 +49,13 @@ document
       },
       body: JSON.stringify(body),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error('Something went wrong');
+        }
+      })
       .then(() => {
         document.getElementsByClassName('content')[0].style.display = 'none';
         document.getElementsByClassName('message')[0].style.display = 'block';

@@ -146,3 +146,7 @@ button:focus {
   cursor: pointer;
   text-decoration: underline;
 }
+
+#content-buttons {
+  display: none;
+}
