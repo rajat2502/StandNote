@@ -225,7 +225,7 @@ class SummariserCosine:
         return sentence_similarity_graph, scores
 
     # Generating Summary Method
-    def generate_summary(self, text, top_n_sentences):
+    def generate_summary(self, text, top_n_sentences=12):
         """
           Generate a summary by processing a text
           through various steps, returning the summarised text
@@ -285,16 +285,10 @@ class MyView(APIView):
         summerised_text, ranked_sentences = summ.generate_summary(
             request.data.get(
                 'text'), request.data.get('max_sentences'))
-        # email_text = '. \n - '.join((summerised_text.split('.')))
         subject = 'Welcome to StandNote!'
-        # message = "Here's your standup meeting notes" + "\n" +\
-        #     ".<br/>- ".join((summerised_text.split('.')))
         message = "Here's your standup meeting notes" + "\n" + \
             '. <br/><br/> <li> '.join((summerised_text.split('.')))
-        # print(message)
         recepient = request.data.get('email')
         send_mail(subject, message, EMAIL_HOST_USER,
                   [recepient], fail_silently=False)
-        # message = markdowner.convert(message)
-        # print(message)
         return Response(data={"summerised_text": message})
