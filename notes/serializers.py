@@ -6,6 +6,6 @@ from . import models
 class NoteSerializer(serializers.ModelSerializer):
 
     class Meta:
-        fields = ('id', 'email', 'title', 'content', 'markdown', 'duration',
+        fields = ('id', 'email', 'title', 'content', 'markdown', 'duration', 'score',
                   'created_at', 'updated_at',)
         model = models.Note
