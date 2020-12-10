@@ -13,3 +13,12 @@ class NoteList(generics.ListCreateAPIView):
 class NoteDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Note.objects.all()
     serializer_class = NoteSerializer
+
+
+class NoteByUser(generics.RetrieveAPIView):
+    lookup_url_kwarg = "email"
+    serializer_class = NoteSerializer
+
+    def get_queryset(self):
+        email = self.request.query_params.get('email', None)
+        return Note.objects.filter(email=email)
