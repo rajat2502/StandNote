@@ -23,8 +23,7 @@ textarea.addEventListener('keyup', (e) => {
 });
 
 async function getSummarizedText() {
-  const body = { email, text: meetingText, max_sentences: 2 };
-  console.log(body);
+  const body = { email, text: meetingText };
 
   const res = await fetch('http://standnote.herokuapp.com/summarizer/', {
     method: 'post',
@@ -34,7 +33,6 @@ async function getSummarizedText() {
     body: JSON.stringify(body),
   });
   const data = await res.json();
-  console.log(data);
 
   return data;
 }
