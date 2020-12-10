@@ -7,5 +7,5 @@ urlpatterns = [
     path('', views.NoteList.as_view()),
     path('create/', views.NoteList.as_view()),
     path('<int:pk>/', views.NoteDetail.as_view()),
-    url(r'^(?P<email>.+)/$', views.NoteByUser.as_view())
+    path('<email>/', views.NoteByUser.as_view())
 ]
