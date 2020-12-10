@@ -145,3 +145,13 @@ button:disabled {
 button:disabled:hover {
   background: #1b8045;
 }
+
+#error {
+  color: #d44444;
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+#duration {
+  font-weight: normal;
+}

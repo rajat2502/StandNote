@@ -16,7 +16,7 @@
         <h1>Meeting Conversation's Text</h1>
         <textarea
           id="meetingText"
-          placeholder="(Meeting text should appear hear)"
+          placeholder="(Meeting text will appear here)"
         ></textarea>
       </div>
       <form id="submit-meeting-details" class="right-content">
@@ -30,16 +30,17 @@
             required
           />
         </p>
+        <p>Meeting's Duration: &nbsp;<span id="duration"></span></p>
         <p>Confidence Score: &nbsp;<span id="score"></span></p>
-        <span style="color: #585858; margin-left: 10px"
+        <span style="color: #585858; margin-left: 10px; font-size: 1rem"
           >(A confidence score is a value between 0-100, it tells us how
           effective our algorithms are working. The higher the score, the
           efficient the algorithms.)</span
         >
-        <p>Meeting's Duration: &nbsp;<span id="duration"></span></p>
         <button type="submit" id="sendText">
           Generate Notes for the Meeting
         </button>
+        <p id="error"></p>
       </form>
     </div>
     <div class="message">
