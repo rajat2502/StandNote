@@ -269,12 +269,15 @@ class SummariserCosine:
 # class SummaryView(APIView):
 def summarizer(self, request):
     text = request.GET.get('text', None)
-    max_sentences = request.GET.get('max_sentences', None)
-    if text and max_sentences:
+    # max_sentences = request.GET.get('max_sentences', None)
+    sentences = text.split('.')
+    # print(sentences)
+    max_sentences = (len(sentences) * 0.4)
+    if text:
         summ = SummariserCosine()
         summerised_text, ranked_sentences = summ.generate_summary(
             text, max_sentences)
-        print(summerised_text)
+        # print(summerised_text)
         return summerised_text
     return None
 
@@ -282,9 +285,13 @@ def summarizer(self, request):
 class MyView(APIView):
     def post(self, request, *args, **kwargs):
         summ = SummariserCosine()
+        sentences = request.data.get('text').split('.')
+        print(len(sentences))
+        max_sentences = int((len(sentences) * 0.2))
+        print(max_sentences)
         summerised_text, ranked_sentences = summ.generate_summary(
             request.data.get(
-                'text'), request.data.get('max_sentences'))
+                'text'), max_sentences)
         subject = 'Welcome to StandNote!'
         message = "Here's your standup meeting notes" + "\n" + \
             '. <br/><br/> <li> '.join((summerised_text.split('.')))
