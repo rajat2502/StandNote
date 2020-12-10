@@ -11,7 +11,7 @@ class Note(models.Model):
     content = models.TextField(blank=True)
     markdown = models.TextField(blank=True)
     duration = models.CharField(blank=True, max_length=100)
-    score = models.CharField(blank=True, max_length=10, default=4.00)
+    score = models.CharField(blank=True, max_length=10)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
