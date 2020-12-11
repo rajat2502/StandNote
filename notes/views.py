@@ -19,7 +19,7 @@ class NoteDetail(generics.RetrieveUpdateDestroyAPIView):
     filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
 
 
-class NoteByUser(generics.RetrieveUpdateAPIView):
+class NoteByUser(generics.ListAPIView):
     model = Note
     serializer_class = NoteSerializer
     lookup_field = 'email'
