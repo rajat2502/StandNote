@@ -22,11 +22,8 @@ class NoteDetail(generics.RetrieveUpdateDestroyAPIView):
 class NoteByUser(generics.RetrieveUpdateAPIView):
     model = Note
     serializer_class = NoteSerializer
-    queryset = Note.objects.all()
     lookup_field = 'email'
 
-    def retrieve(self, request, email):
-        queryset = Note.objects.filter(email=email)
-        # note = get_list_or_404(queryset, email=email)
-        serializer = NoteSerializer
-        # return Response(serializer.data)
+    def get_queryset(self):
+        email = self.kwargs['email']
+        return Note.objects.filter(email=email)
