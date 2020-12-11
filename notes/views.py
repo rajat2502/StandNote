@@ -27,6 +27,6 @@ class NoteByUser(generics.RetrieveUpdateAPIView):
 
     def retrieve(self, request, email):
         queryset = Note.objects.filter(email=email)
-        note = get_list_or_404(queryset, email=email)
-        serializer = NoteSerializer(note)
-        return Response(serializer.data)
+        # note = get_list_or_404(queryset, email=email)
+        serializer = NoteSerializer
+        # return Response(serializer.data)
