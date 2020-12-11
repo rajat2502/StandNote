@@ -63,7 +63,7 @@ The theme of our project idea is **Networking and Productivity**. We are reducin
 | S.No. | Name               | Role                      | GitHub Username:octocat:                             |
 | ----- | ------------------ | ------------------------- | ---------------------------------------------------- |
 | 1.    | Rajat Verma        | Frontend Developer        | [@rajat2502](https://github.com/rajat2502)           |
-| 1.    | Pragati Verma      | Backend Developer        | [@rajat2502](https://github.com/PragatiVerma18)           |
+| 1.    | Pragati Verma      | Backend Developer        | [@PragatiVerma18](https://github.com/PragatiVerma18)           |
 | 2.    | Shristi Singh      | UI Designer               | [@shristisingh29](https://github.com/shristisingh29) |
 | 3.    | Prateek Maheshwari | Backend Developer         | [@friskycodeur](https://github.com/friskycodeur)     |
 | 3.    | Aditya Kumar Gupta | Machine Learning Developer  | [@geekquad](https://github.com/geekquad)             |
