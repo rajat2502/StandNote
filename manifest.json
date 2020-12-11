@@ -1,8 +1,9 @@
 {
   "manifest_version": 2,
+  "key": "mnlpghekblinohfbojnhfckdfmikanja",
   "name": "StandNote",
   "version": "1.0.0",
-  "description": "StandNote description",
+  "description": "StandNote is your easy to use online meeting assistant that backs you up with automated meeting minutes for every conversation.",
   "short_name": "StandNote",
 
   "icons": {
