@@ -19,7 +19,10 @@ const Form = ({ formType, formButton, setUser }) => {
     setIsDisabled(true);
     const res = await googleLogin(response.accessToken);
     if (!res.err) {
-      localStorage.setItem('token', res.key);
+      localStorage.setItem(
+        'user',
+        JSON.stringify({ email: response.wt.cu, token: res.key })
+      );
       setUser({ email: response.wt.cu });
       history.push('/dashboard');
     } else {
@@ -50,7 +53,7 @@ const Form = ({ formType, formButton, setUser }) => {
         res = await login(user);
       }
       if (!res.err) {
-        localStorage.setItem('token', res.key);
+        localStorage.setItem('user', JSON.stringify({ email, token: res.key }));
         setUser({ email });
         history.push('/dashboard');
       } else {

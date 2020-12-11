@@ -9,7 +9,7 @@ export const googleLogin = async (access_token) => {
     });
     return { key: res };
   } catch (err) {
-    return { err: 'Something went thing!' };
+    return { err: 'Something went wrong!' };
   }
 };
 
@@ -18,7 +18,7 @@ export const login = async (user) => {
     const res = await axios.post(`${baseUrl}/rest-auth/login/`, user);
     return { key: res.data.key };
   } catch (err) {
-    return { err: 'Something went thing!' };
+    return { err: 'Something went wrong!' };
   }
 };
 
@@ -31,6 +31,17 @@ export const register = async (user) => {
     );
     return { key: res.data.key };
   } catch (err) {
-    return { err: 'Something went thing!' };
+    return { err: 'Something went wrong!' };
+  }
+};
+
+export const getAllNotes = async (email) => {
+  try {
+    const res = await axios.get(`${baseUrl}/notes/${email}/`);
+
+    console.log(res);
+    return res.data;
+  } catch (err) {
+    return { err: 'Something went wrong!' };
   }
 };
