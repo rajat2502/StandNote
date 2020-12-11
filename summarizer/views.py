@@ -286,16 +286,17 @@ class MyView(APIView):
     def post(self, request, *args, **kwargs):
         summ = SummariserCosine()
         sentences = request.data.get('text').split('.')
-        print(len(sentences))
+        # print(len(sentences))
         max_sentences = int((len(sentences) * 0.2))
-        print(max_sentences)
+        # print(max_sentences)
         summerised_text, ranked_sentences = summ.generate_summary(
             request.data.get(
                 'text'), max_sentences)
+        text = "Here's your standup meeting notes" + "\n" + \
+            ' \n• '.join((summerised_text.split('.')))
         subject = 'Welcome to StandNote!'
-        message = "Here's your standup meeting notes" + "\n" + \
-            '. <br/><br/> <li> '.join((summerised_text.split('.')))
+        message = 'Thanks for using StandNote. Your meeting notes are ready. Please head over to your Dashboard at: https://standnote.netlify.app/dashboard to view your notes.'
         recepient = request.data.get('email')
         send_mail(subject, message, EMAIL_HOST_USER,
                   [recepient], fail_silently=False)
-        return Response(data={"summerised_text": message})
+        return Response(data={"summerised_text": text})
