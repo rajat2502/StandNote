@@ -26,6 +26,34 @@ const getIcons = () => [
     height: '48',
     viewBox: '0 0 48 48',
   },
+  {
+    id: 2,
+    name: 'delete',
+    svg: (
+      <g
+        style={{ mixBlendMode: 'normal' }}
+        fill='none'
+        fontFamily='none'
+        fillRule='nonzero'
+        fontSize='none'
+        stroke='none'
+        strokeDasharray=''
+        strokeLinecap='butt'
+        strokeWidth='1'
+        textAnchor='none'
+      >
+        <path d='M0,172v-172h172v172z' fill='none' />
+        <g fill='#ffffff'>
+          <path d='M71.66667,14.33333l-7.16667,7.16667h-35.83333v14.33333h114.66667v-14.33333h-35.83333l-7.16667,-7.16667zM35.83333,50.16667v93.16667c0,7.88333 6.45,14.33333 14.33333,14.33333h71.66667c7.88333,0 14.33333,-6.45 14.33333,-14.33333v-93.16667zM67.43945,71.66667l18.56055,18.56055l18.56055,-18.56055l10.10612,10.10612l-18.56055,18.56055l18.56055,18.56055l-10.10612,10.10612l-18.56055,-18.56055l-18.56055,18.56055l-10.10612,-10.10612l18.56055,-18.56055l-18.56055,-18.56055z' />
+        </g>
+      </g>
+    ),
+    height: '24',
+    width: '24',
+    viewBox: '0 0 172 172',
+    x: '0px',
+    y: '0px',
+  },
 ];
 
 export default getIcons;

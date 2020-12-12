@@ -22,7 +22,7 @@ const SidebarLayout = ({ user, setUser }) => {
           exact
           render={(props) => <Dashboard user={user} {...props} />}
         />
-        <Route path='notes/:id' component={Notes} />
+        <Route path='/notes/:id' component={Notes} />
         <Route path='/integrations' exact component={Integrations} />
         <Route path='/tips' exact component={StandNoteTips} />
       </div>

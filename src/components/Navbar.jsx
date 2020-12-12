@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <div className='flex items-center justify-between py-2 px-4 bg-green-500 text-white font-bold'>
+    <div className='md:flex md:items-center md:justify-between py-2 px-4 bg-green-500 text-white font-bold'>
       <Link to='/'>
         <img
           className='h-12'
@@ -11,17 +11,34 @@ function Navbar() {
           alt='Standnote'
         />
       </Link>
-      <div>
-        <Link className='mx-2' to='/'>
-          Home
-        </Link>
-        <Link className='mx-2' to='/dashboard'>
-          Dashboard
-        </Link>
-        <Link className='mx-2' to='/login'>
-          Login
-        </Link>
-      </div>
+      <nav>
+        <ul className='list-reset md:flex md:items-center'>
+          <li className='md:ml-4'>
+            <Link
+              className='block no-underline py-2 md:border-none md:p-0 font-bold'
+              to='/'
+            >
+              Home
+            </Link>
+          </li>
+          <li className='md:ml-4'>
+            <Link
+              className='border-t block no-underline py-2 md:border-none md:p-0 font-bold'
+              to='/dashboard'
+            >
+              Dashboard
+            </Link>
+          </li>
+          <li className='md:ml-4'>
+            <Link
+              className='border-t block no-underline py-2 md:border-none md:p-0 font-bold'
+              to='/'
+            >
+              Integrations
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }

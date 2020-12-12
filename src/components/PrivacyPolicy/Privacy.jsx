@@ -1,74 +1,42 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+
+import Navbar from 'components/Navbar';
+import Footer from 'components/Footer';
 
 function Privacy() {
   return (
     <>
-      <header className="border-b md:flex md:items-center md:justify-between p-4 pb-0 shadow-lg md:pb-4 bg-gray-50">
-        <div className="flex items-center justify-between mb-4 md:mb-0">
-          <h1 className="leading-none text-2xl text-grey-darkest">
-            <Link
-              className="no-underline text-grey-darkest hover:text-black"
-              to="/"
-            >
-              <img
-                className="mx-auto"
-                src={require("assets/logo.png").default}
-                alt="StandNote"
-                style={{ width: 240 }}
-              />
-            </Link>
-          </h1>
-
-          <Link className="text-black hover:text-orange md:hidden" to="/">
-            <i className="fa fa-2x fa-bars"></i>
-          </Link>
-        </div>
-        <nav>
-          <ul className="list-reset md:flex md:items-center">
-            <li className="md:ml-4">
-              <Link
-                className="block no-underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0 font-bold"
-                to="/register"
-              >
-                Register
-              </Link>
-            </li>
-            <li className="md:ml-4">
-              <Link
-                className="border-t block no-underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0 font-bold"
-                to="/dashboard"
-              >
-                Dashboard
-              </Link>
-            </li>
-            <li className="md:ml-4">
-              <Link
-                class="border-t block no-underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0 font-bold"
-                to="/"
-              >
-                Integrations
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <div className="w-full min-h-screen bg-gray-200">
-        <h1 className="mb-2 pt-4 text-center text-4xl text-gray-700 font-bold">
+      <Navbar />
+      <div className='pt-4 w-full min-h-screen bg-gray-200'>
+        <h1 className='mb-4 pt-6 text-center text-4xl text-gray-700 font-bold'>
           Privacy Policy
         </h1>
-        <div className="md:px-32">
-          <h1 className="mb-4 pb-4 pt-2 text-center text-2xl text-gray-500 font-bold">Last Updated on 12th December 2020</h1>
+        <div className='px-6 container mx-auto'>
+          <h1 className='mb-4 pb-4 pt-2 text-center text-lg text-gray-500 font-bold'>
+            Last Updated on 12th December 2020
+          </h1>
           <p>
-            At <strong>StandNote</strong>, accessible from <a href="https://standnote.netlify.app/" className="text-indigo-700 font-bold">https://standnote.netlify.app/</a>, one of
-            our main priorities is the privacy of our visitors. This Privacy
-            Policy document contains types of information that is collected and
-            recorded by StandNote and how we use it.
+            At <strong>StandNote</strong>, accessible from{' '}
+            <a
+              href='https://standnote.netlify.app/'
+              className='text-indigo-700 font-bold'
+            >
+              https://standnote.netlify.app/
+            </a>
+            , one of our main priorities is the privacy of our visitors. This
+            Privacy Policy document contains types of information that is
+            collected and recorded by StandNote and how we use it.
           </p>
 
           <p>
             If you have additional questions or require more information about
-            our Privacy Policy, do not hesitate to contact us at <a href="mailto:standnote@gmail.com" className="text-indigo-700 font-bold">standnote@gmail.com</a>
+            our Privacy Policy, do not hesitate to contact us at{' '}
+            <a
+              href='mailto:standnote@gmail.com'
+              className='text-indigo-700 font-bold'
+            >
+              standnote@gmail.com
+            </a>
           </p>
 
           <p>
@@ -79,14 +47,18 @@ function Privacy() {
             other than this website.
           </p>
 
-          <h2 className="my-4 pt-4 text-2xl text-gray-700 font-bold">Consent</h2>
+          <h2 className='my-4 pt-4 text-2xl text-gray-700 font-bold'>
+            Consent
+          </h2>
 
           <p>
             By using our website, you hereby consent to our Privacy Policy and
             agree to its terms.
           </p>
 
-          <h2 className="my-4 pt-4 text-2xl text-gray-700 font-bold">Information we collect</h2>
+          <h2 className='my-4 pt-4 text-2xl text-gray-700 font-bold'>
+            Information we collect
+          </h2>
 
           <p>
             The personal information that you are asked to provide, and the
@@ -105,28 +77,40 @@ function Privacy() {
             email address, and telephone number.
           </p>
 
-          <h2 className="my-4 pt-4 text-2xl text-gray-700 font-bold">How we use your information</h2>
+          <h2 className='my-4 pt-4 text-2xl text-gray-700 font-bold'>
+            How we use your information
+          </h2>
 
           <p>
             We use the information we collect in various ways, including to:
           </p>
 
-          <ul className="list-disc">
-            <li className="list-inside">Provide, operate, and maintain our website</li>
-            <li className="list-inside">Improve, personalize, and expand our website</li>
-            <li className="list-inside">Understand and analyze how you use our website</li>
-            <li className="list-inside">Develop new products, services, features, and functionality</li>
-            <li className="list-inside">
+          <ul className='list-disc'>
+            <li className='list-inside'>
+              Provide, operate, and maintain our website
+            </li>
+            <li className='list-inside'>
+              Improve, personalize, and expand our website
+            </li>
+            <li className='list-inside'>
+              Understand and analyze how you use our website
+            </li>
+            <li className='list-inside'>
+              Develop new products, services, features, and functionality
+            </li>
+            <li className='list-inside'>
               Communicate with you, either directly or through one of our
               partners, including for customer service, to provide you with
               updates and other information relating to the website, and for
               marketing and promotional purposes
             </li>
-            <li className="list-inside">Send you emails</li>
-            <li className="list-inside">Find and prevent fraud</li>
+            <li className='list-inside'>Send you emails</li>
+            <li className='list-inside'>Find and prevent fraud</li>
           </ul>
 
-          <h2 className="my-4 pt-4 text-2xl text-gray-700 font-bold">Log Files</h2>
+          <h2 className='my-4 pt-4 text-2xl text-gray-700 font-bold'>
+            Log Files
+          </h2>
 
           <p>
             StandNote follows a standard procedure of using log files. These
@@ -141,7 +125,9 @@ function Privacy() {
             demographic information.
           </p>
 
-          <h2 className="my-4 pt-4 text-2xl text-gray-700 font-bold">Advertising Partners Privacy Policies</h2>
+          <h2 className='my-4 pt-4 text-2xl text-gray-700 font-bold'>
+            Advertising Partners Privacy Policies
+          </h2>
 
           <p>
             You may consult this list to find the Privacy Policy for each of the
@@ -164,14 +150,16 @@ function Privacy() {
             that are used by third-party advertisers.
           </p>
 
-          <h2 className="my-4 pt-4 text-2xl text-gray-700 font-bold">Third Party Privacy Policies</h2>
+          <h2 className='my-4 pt-4 text-2xl text-gray-700 font-bold'>
+            Third Party Privacy Policies
+          </h2>
 
           <p>
             StandNote's Privacy Policy does not apply to other advertisers or
             websites. Thus, we are advising you to consult the respective
             Privacy Policies of these third-party ad servers for more detailed
             information. It may include their practices and instructions about
-            how to opt-out of certain options.{" "}
+            how to opt-out of certain options.{' '}
           </p>
 
           <p>
@@ -181,7 +169,9 @@ function Privacy() {
             respective websites.
           </p>
 
-          <h2 className="my-4 pt-4 text-2xl text-gray-700 font-bold">CCPA Privacy Rights (Do Not Sell My Personal Information)</h2>
+          <h2 className='my-4 pt-4 text-2xl text-gray-700 font-bold'>
+            CCPA Privacy Rights (Do Not Sell My Personal Information)
+          </h2>
 
           <p>
             Under the CCPA, among other rights, California consumers have the
@@ -205,44 +195,52 @@ function Privacy() {
             would like to exercise any of these rights, please contact us.
           </p>
 
-          <h2 className="my-4 pt-4 text-2xl text-gray-700 font-bold">GDPR Data Protection Rights</h2>
+          <h2 className='my-4 pt-4 text-2xl text-gray-700 font-bold'>
+            GDPR Data Protection Rights
+          </h2>
 
           <p>
             We would like to make sure you are fully aware of all of your data
             protection rights. Every user is entitled to the following:
           </p>
-          <ul className="list-disc">
-          <li className="list-inside">
-            <strong>The right to access –</strong> You have the right to request copies of your
-            personal data. We may charge you a small fee for this service.
-          </li>
-          <li className="list-inside">
-            <strong>The right to rectification –</strong> You have the right to request that we
-            correct any information you believe is inaccurate. You also have the
-            right to request that we complete the information you believe is
-            incomplete.
-          </li>
-          <li className="list-inside">
-            <strong>The right to erasure –</strong> You have the right to request that we erase
-            your personal data, under certain conditions.
-          </li>
-          <li className="list-inside">
-            <strong>The right to restrict processing –</strong> You have the right to request
-            that we restrict the processing of your personal data, under certain
-            conditions.
-          </li>
-          <li className="list-inside">
-            <strong>The right to object to processing –</strong> You have the right to object to
-            our processing of your personal data, under certain conditions.
-          </li>
-          <li className="list-inside">
-            <strong>The right to data portability –</strong> You have the right to request that
-            we transfer the data that we have collected to another organization,
-            or directly to you, under certain conditions.
-          </li>
+          <ul className='list-disc'>
+            <li className='list-inside'>
+              <strong>The right to access –</strong> You have the right to
+              request copies of your personal data. We may charge you a small
+              fee for this service.
+            </li>
+            <li className='list-inside'>
+              <strong>The right to rectification –</strong> You have the right
+              to request that we correct any information you believe is
+              inaccurate. You also have the right to request that we complete
+              the information you believe is incomplete.
+            </li>
+            <li className='list-inside'>
+              <strong>The right to erasure –</strong> You have the right to
+              request that we erase your personal data, under certain
+              conditions.
+            </li>
+            <li className='list-inside'>
+              <strong>The right to restrict processing –</strong> You have the
+              right to request that we restrict the processing of your personal
+              data, under certain conditions.
+            </li>
+            <li className='list-inside'>
+              <strong>The right to object to processing –</strong> You have the
+              right to object to our processing of your personal data, under
+              certain conditions.
+            </li>
+            <li className='list-inside'>
+              <strong>The right to data portability –</strong> You have the
+              right to request that we transfer the data that we have collected
+              to another organization, or directly to you, under certain
+              conditions.
+            </li>
           </ul>
 
-          <h2 className="my-4 pt-4 text-2xl text-gray-700 font-bold">Children's Information</h2>
+          <h2 className='my-4 pt-4 text-2xl text-gray-700 font-bold'>
+            Children's Information
+          </h2>
 
           <p>
             Another part of our priority is adding protection for children while
@@ -258,17 +256,23 @@ function Privacy() {
             best efforts to promptly remove such information from our records.
           </p>
 
-          <h2 className="my-4 pt-4 text-2xl text-gray-700 font-bold"> Contact Information</h2>
-          <p className="pb-20">
-            Should you have any question about this policy, please email us at <a href="mailto:standnote@gmail.com" className="text-indigo-700 font-bold">standnote@gmail.com</a>, call us at 6388801259.
+          <h2 className='my-4 pt-4 text-2xl text-gray-700 font-bold'>
+            {' '}
+            Contact Information
+          </h2>
+          <p className='pb-20'>
+            Should you have any question about this policy, please email us at{' '}
+            <a
+              href='mailto:standnote@gmail.com'
+              className='text-indigo-700 font-bold'
+            >
+              standnote@gmail.com
+            </a>
+            , call us at 6388801259.
           </p>
         </div>
-        <div className='text-center bg-gray-800 p-2' style={{ height: 40 }}>
-        <p className='text-gray-200 text-center'>
-          MIT License © Copyright 2020 StandNote.
-        </p>
       </div>
-      </div>
+      <Footer />
     </>
   );
 }

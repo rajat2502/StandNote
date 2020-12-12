@@ -9,13 +9,27 @@ import Privacy from 'components/PrivacyPolicy/Privacy'
 
 function App() {
   const [user, setUser] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
       setUser(user);
     }
+    setLoading(false);
   }, []);
+
+  if (loading) {
+    return (
+      <div className='w-full h-screen flex justify-center items-center'>
+        <img
+          className='h-28'
+          src={require('assets/loader.gif').default}
+          alt='standnote-loader'
+        />
+      </div>
+    );
+  }
 
   return (
     <div>

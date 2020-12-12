@@ -38,9 +38,24 @@ export const register = async (user) => {
 export const getAllNotes = async (email) => {
   try {
     const res = await axios.get(`${baseUrl}/notes/${email}/`);
-
-    console.log(res);
     return res.data;
+  } catch (err) {
+    return { err: 'Something went wrong!' };
+  }
+};
+
+export const getNote = async (id) => {
+  try {
+    const res = await axios.get(`${baseUrl}/notes/${id}`);
+    return res.data;
+  } catch (err) {
+    return { err: 'Something went wrong!' };
+  }
+};
+
+export const deleteNote = async (id) => {
+  try {
+    await axios.delete(`${baseUrl}/notes/${id}`);
   } catch (err) {
     return { err: 'Something went wrong!' };
   }
