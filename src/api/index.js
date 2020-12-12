@@ -73,9 +73,7 @@ export const deleteNote = async (id) => {
 
 export const getNotionCredentials = async (email) => {
   try {
-    const res = await axios.get(
-      `http://standnote.herokuapp.com/notion/email/${email}/`
-    );
+    const res = await axios.get(`${baseUrl}/notion/email/${email}/`);
     return res.data[0];
   } catch {
     return { err: 'Something went wrong!' };
@@ -84,7 +82,7 @@ export const getNotionCredentials = async (email) => {
 
 export const submitNotionCredentials = async (obj) => {
   try {
-    const res = await axios.post('http://standnote.herokuapp.com/notion/', obj);
+    const res = await axios.post(`${baseUrl}/notion/`, obj);
     return res.data;
   } catch {
     return { err: 'Something went wrong!' };
@@ -93,10 +91,7 @@ export const submitNotionCredentials = async (obj) => {
 
 export const pushMkdToNotion = async (obj) => {
   try {
-    const res = await axios.post(
-      'http://standnote.herokuapp.com/notion/note/',
-      obj
-    );
+    const res = await axios.post(`${baseUrl}/notion/note/`, obj);
     console.log(res.data);
     return res.data;
   } catch {
