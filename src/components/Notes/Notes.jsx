@@ -1,11 +1,17 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
-import { getNote, deleteNote, updateNote } from 'api';
+import {
+  getNote,
+  deleteNote,
+  updateNote,
+  getNotionCredentials,
+  pushMkdToNotion,
+} from 'api';
 
 import Icon from 'components/Icon';
 
-const Notes = () => {
+const Notes = ({ user }) => {
   const history = useHistory();
   const { id } = useParams();
   const [editing, setEditing] = useState(false);
@@ -13,6 +19,9 @@ const Notes = () => {
   const [saving, setSaving] = useState(false);
   const [noteData, setNoteData] = useState({});
   const [mom, setMom] = useState('');
+  const [hasNotion, setHasNotion] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [msg, setMsg] = useState('');
 
   const changeEditing = () => {
     setEditing((state) => !state);
@@ -50,6 +59,19 @@ const Notes = () => {
     setSaving(false);
   };
 
+  const pushToNotion = async () => {
+    setSubmitting(true);
+    const obj = {
+      email: user.email,
+      title: 'StandNote - Meeting Notes',
+      text: noteData.markdown,
+    };
+    const data = await pushMkdToNotion(obj);
+    setSubmitting(false);
+    setMsg(data);
+    setTimeout(() => setMsg(''), 3000);
+  };
+
   const getNoteData = useCallback(async () => {
     const res = await getNote(id);
     setNoteData(res);
@@ -57,9 +79,17 @@ const Notes = () => {
     setLoading(false);
   }, [id]);
 
+  const getNotionData = useCallback(async () => {
+    const data = await getNotionCredentials(user.email);
+    if (data.token) {
+      setHasNotion(true);
+    }
+  }, [user.email]);
+
   useEffect(() => {
     getNoteData();
-  }, [getNoteData]);
+    getNotionData();
+  }, [getNoteData, getNotionData]);
 
   if (loading) {
     return (
@@ -139,14 +169,20 @@ const Notes = () => {
             <Icon name='score' /> &nbsp;&nbsp;
             <span>{noteData.score}/100</span>
           </p>
-          {/* <button className='focus:outline-none mt-6 font-bold shadow-md hover:shadow-lg py-3 px-8 rounded bg-white flex items-center'>
-            <Icon name='slack' />
-            &nbsp;Push to Slack
-          </button> */}
-          <button className='focus:outline-none mt-6 font-bold shadow-md hover:shadow-lg py-2 px-8 rounded bg-white flex items-center'>
+          <button
+            onClick={pushToNotion}
+            disabled={!hasNotion || submitting}
+            className='text-lg focus:outline-none mt-6 font-bold shadow-md hover:shadow-lg py-2 px-8 rounded bg-white flex items-center'
+          >
             <Icon name='notion' />
-            &nbsp;Push to Notion
+            Push to Notion
           </button>
+          <p
+            style={{ width: 240 }}
+            className='mt-4 text-green-600 text-md font-normal'
+          >
+            {msg}
+          </p>
         </div>
       </div>
     </div>
