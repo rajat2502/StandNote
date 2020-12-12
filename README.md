@@ -63,10 +63,10 @@ The theme of our project idea is **Networking and Productivity**. We are reducin
 | S.No. | Name               | Role                      | GitHub Username:octocat:                             |
 | ----- | ------------------ | ------------------------- | ---------------------------------------------------- |
 | 1.    | Rajat Verma        | Frontend Developer        | [@rajat2502](https://github.com/rajat2502)           |
-| 1.    | Pragati Verma      | Backend Developer        | [@PragatiVerma18](https://github.com/PragatiVerma18)           |
-| 2.    | Shristi Singh      | UI Designer               | [@shristisingh29](https://github.com/shristisingh29) |
-| 3.    | Prateek Maheshwari | Backend Developer         | [@friskycodeur](https://github.com/friskycodeur)     |
-| 3.    | Aditya Kumar Gupta | Machine Learning Developer  | [@geekquad](https://github.com/geekquad)             |
+| 2.    | Pragati Verma      | Backend Developer        | [@PragatiVerma18](https://github.com/PragatiVerma18)           |
+| 3.    | Shristi Singh      | UI Designer               | [@shristisingh29](https://github.com/shristisingh29) |
+| 4.    | Prateek Maheshwari | Backend Developer         | [@friskycodeur](https://github.com/friskycodeur)     |
+| 5.    | Aditya Kumar Gupta | Machine Learning Developer  | [@geekquad](https://github.com/geekquad)             |
 
 [![Uses Git](https://forthebadge.com/images/badges/uses-git.svg)](https://github.com/rajat2502/StandNote/) [![Uses HTML](https://forthebadge.com/images/badges/uses-html.svg)](https://github.com/rajat2502/StandNote/) [![Uses CSS](https://forthebadge.com/images/badges/uses-css.svg)](https://github.com/rajat2502/StandNote/) [![Uses JS](https://forthebadge.com/images/badges/uses-js.svg)](https://github.com/rajat2502/StandNote/)
 [![Built with love](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/rajat2502/StandNote/) [![Built By Developers](https://forthebadge.com/images/badges/built-by-developers.svg)](https://github.com/rajat2502/StandNote/) [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://github.com/rajat2502/StandNote/)
