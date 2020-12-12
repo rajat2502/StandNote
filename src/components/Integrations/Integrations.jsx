@@ -5,7 +5,7 @@ import { getNotionCredentials, submitNotionCredentials } from 'api';
 const Integrations = ({ user }) => {
   const [loading, setLoading] = useState(true);
   const [notionData, setNotionData] = useState({});
-  const [submitting, setSubmitting] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
   const [token, setToken] = useState('');
   const [docLink, setDocLink] = useState('');
 
