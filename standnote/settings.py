@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_auth',
     'summarizer',
     'notes',
+    'notionbot',
     # for social login
     'django.contrib.sites',
     'allauth',
