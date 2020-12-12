@@ -112,14 +112,14 @@ function Privacy() {
           </p>
 
           <ul className="list-disc">
-            <li className="list-inside">Provide, operate, and maintain our webste</li>
-            <li className="list-inside">Improve, personalize, and expand our webste</li>
-            <li className="list-inside">Understand and analyze how you use our webste</li>
+            <li className="list-inside">Provide, operate, and maintain our website</li>
+            <li className="list-inside">Improve, personalize, and expand our website</li>
+            <li className="list-inside">Understand and analyze how you use our website</li>
             <li className="list-inside">Develop new products, services, features, and functionality</li>
             <li className="list-inside">
               Communicate with you, either directly or through one of our
               partners, including for customer service, to provide you with
-              updates and other information relating to the webste, and for
+              updates and other information relating to the website, and for
               marketing and promotional purposes
             </li>
             <li className="list-inside">Send you emails</li>
@@ -250,14 +250,24 @@ function Privacy() {
             participate in, and/or monitor and guide their online activity.
           </p>
 
-          <p className="pb-32">
+          <p>
             StandNote does not knowingly collect any Personal Identifiable
             Information from children under the age of 13. If you think that
             your child provided this kind of information on our website, we
             strongly encourage you to contact us immediately and we will do our
             best efforts to promptly remove such information from our records.
           </p>
+
+          <h2 className="my-4 pt-4 text-2xl text-gray-700 font-bold"> Contact Information</h2>
+          <p className="pb-20">
+            Should you have any question about this policy, please email us at <a href="mailto:standnote@gmail.com" className="text-indigo-700 font-bold">standnote@gmail.com</a>, call us at 6388801259.
+          </p>
         </div>
+        <div className='text-center bg-gray-800 p-2' style={{ height: 40 }}>
+        <p className='text-gray-200 text-center'>
+          MIT License © Copyright 2020 StandNote.
+        </p>
+      </div>
       </div>
     </>
   );
