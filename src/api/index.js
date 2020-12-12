@@ -46,7 +46,17 @@ export const getAllNotes = async (email) => {
 
 export const getNote = async (id) => {
   try {
-    const res = await axios.get(`${baseUrl}/notes/${id}`);
+    const res = await axios.get(`${baseUrl}/notes/${id}/`);
+    return res.data;
+  } catch (err) {
+    return { err: 'Something went wrong!' };
+  }
+};
+
+export const updateNote = async (id, obj) => {
+  try {
+    const res = await axios.put(`${baseUrl}/notes/${id}/`, obj);
+    console.log(res.data);
     return res.data;
   } catch (err) {
     return { err: 'Something went wrong!' };

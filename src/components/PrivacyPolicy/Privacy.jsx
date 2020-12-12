@@ -3,7 +3,7 @@ import React from 'react';
 import Navbar from 'components/Navbar';
 import Footer from 'components/Footer';
 
-function Privacy() {
+const Privacy = () => {
   return (
     <>
       <Navbar />
@@ -105,7 +105,13 @@ function Privacy() {
               marketing and promotional purposes
             </li>
             <li className='list-inside'>Send you emails</li>
-            <li className='list-inside'>Find and prevent fraud</li>
+            <li className='list-inside'>
+              The only time we are using your data is when our ML model is
+              working to provide you with the best summary notes. Your speech is
+              not saved anywhere with us, the notes we provide will be posted on
+              your channels and hence we are there to process the data and not
+              to hold it.
+            </li>
           </ul>
 
           <h2 className='my-4 pt-4 text-2xl text-gray-700 font-bold'>
@@ -275,6 +281,6 @@ function Privacy() {
       <Footer />
     </>
   );
-}
+};
 
 export default Privacy;

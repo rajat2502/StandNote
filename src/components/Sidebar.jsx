@@ -60,9 +60,15 @@ const Sidebar = ({ user, setUser }) => {
       <div className='flex text-center flex-col text-sm'>
         <p>{user.email}</p>
         <span className='text-gray-600'>●</span>
-        <button onClick={logOut} className='text-blue-600 focus:outline-none'>
-          Log Out
-        </button>
+        <div>
+          <Link className='text-blue-600' to='/privacy-policy'>
+            Privacy Policy
+          </Link>
+          <span>&nbsp; | &nbsp;</span>
+          <button onClick={logOut} className='text-blue-600 focus:outline-none'>
+            Log Out
+          </button>
+        </div>
       </div>
     </div>
   );

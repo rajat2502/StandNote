@@ -1,19 +1,59 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
-import { getNote } from 'api';
+import { getNote, deleteNote, updateNote } from 'api';
+
+import Icon from 'components/Icon';
 
 const Notes = () => {
+  const history = useHistory();
   const { id } = useParams();
+  const [editing, setEditing] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
   const [noteData, setNoteData] = useState({});
   const [mom, setMom] = useState('');
+
+  const changeEditing = () => {
+    setEditing((state) => !state);
+  };
+
+  const viewFullText = () => {
+    const newWindow = window.open('/fullContent');
+    newWindow.data = noteData.content;
+    newWindow.meetingHead = noteData.title;
+  };
+
+  const deleteNoteWithId = async () => {
+    if (
+      window.confirm('This action will delete the notes from your account!')
+    ) {
+      await deleteNote(noteData.id);
+      history.push('/');
+    }
+  };
+
+  const saveNotes = async () => {
+    setSaving(true);
+    setEditing(false);
+    const obj = {
+      email: noteData.email,
+      title: noteData.title,
+      content: noteData.content,
+      markdown: mom,
+      duration: noteData.duration,
+      score: noteData.score,
+    };
+    obj.markdown = mom;
+    const data = await updateNote(noteData.id, obj);
+    setNoteData(data);
+    setSaving(false);
+  };
 
   const getNoteData = useCallback(async () => {
     const res = await getNote(id);
     setNoteData(res);
     setMom(res.markdown);
-    console.log(res);
     setLoading(false);
   }, [id]);
 
@@ -34,38 +74,79 @@ const Notes = () => {
   }
 
   return (
-    <div className='p-4'>
+    <div className='w-full p-6'>
       <h1 className='my-2 text-center text-4xl text-gray-700 font-bold'>
         {noteData.title}
       </h1>
       <div className='flex mx-6 mt-16'>
-        <div>
-          <h1 className='text-center mb-4 text-2xl font-bold'>Meeting Notes</h1>
+        <div className='w-full md:w-2/3'>
+          <div className='flex items-center justify-between'>
+            <h1 className='text-center mb-4 text-3xl font-bold'>
+              Meeting Notes
+            </h1>
+            <div>
+              <button
+                className='focus:outline-none text-white bg-yellow-500 py-1 text-sm font-bold rounded-full px-4 mx-1'
+                onClick={viewFullText}
+              >
+                View Full Text
+              </button>
+              <button
+                onClick={changeEditing}
+                className='focus:outline-none text-white bg-blue-500 py-1 text-sm font-bold rounded-full px-4 mx-2'
+              >
+                {editing ? 'Disable Edit' : 'Edit'}
+              </button>
+              <button
+                onClick={deleteNoteWithId}
+                className='focus:outline-none text-white bg-red-500 py-1 text-sm font-bold rounded-full px-4 mx-1'
+              >
+                Delete
+              </button>
+              <button
+                disabled={noteData.markdown === mom || saving}
+                onClick={saveNotes}
+                className='focus:outline-none text-white bg-green-600 py-1 text-sm font-bold rounded-full px-4 mx-2'
+              >
+                {saving ? 'Saving...' : 'Save'}
+              </button>
+            </div>
+          </div>
           <textarea
-            style={{ minWidth: 650, minHeight: 650 }}
-            className='leading-8 focus:outline-none focus:ring focus:border-blue-400 resize-y p-4 rounded'
+            style={
+              editing
+                ? { height: 700, fontFamily: 'monospace' }
+                : { height: 700, fontFamily: 'monospace', opacity: 0.92 }
+            }
+            className='text-xl w-full bg-gray-800 text-white leading-7 focus:outline-none resize-y p-6 rounded'
             value={mom}
+            readOnly={!editing}
             onChange={(e) => setMom(e.target.value)}
           ></textarea>
         </div>
-        <div className='mx-4'>
-          <p>
-            Meeting's Date:{' '}
+        <div className='text-2xl p-10 flex flex-col text-gray-600 font-bold mx-4'>
+          <p className='flex items-center mt-4'>
+            <Icon name='date' /> &nbsp;&nbsp;
             <span>
               {new Date(noteData.created_at.slice(0, 10)).toLocaleDateString()}
             </span>
           </p>
-          <p>
-            Meeting's Duration: <span>{noteData.duration}</span>
+          <p className='flex items-center mt-4'>
+            <Icon name='time' /> &nbsp;&nbsp;&nbsp;
+            <span>{noteData.duration}</span>
           </p>
-          <p>
-            Confidence Score: <span>{noteData.score}</span>
+          <p className='flex items-center mt-4'>
+            <Icon name='score' /> &nbsp;&nbsp;
+            <span>{noteData.score}/100</span>
           </p>
-          <Link className='text-blue-600 underline' to='/'>
-            {' '}
-            View Full Meeting's Text
-          </Link>
-          <button>Push to Slack/Notion</button>
+          {/* <button className='focus:outline-none mt-6 font-bold shadow-md hover:shadow-lg py-3 px-8 rounded bg-white flex items-center'>
+            <Icon name='slack' />
+            &nbsp;Push to Slack
+          </button> */}
+          <button className='focus:outline-none mt-6 font-bold shadow-md hover:shadow-lg py-2 px-8 rounded bg-white flex items-center'>
+            <Icon name='notion' />
+            &nbsp;Push to Notion
+          </button>
         </div>
       </div>
     </div>
