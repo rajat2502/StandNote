@@ -3,6 +3,7 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Lottie from "react-lottie";
 import animationData from "assets/lotties/chat.json";
+import animationData1 from "assets/lotties/bubble.json";
 import blogger from "assets/blogger.png";
 import Notion from "assets/Notion.png";
 import businessmen from "assets/businessmen.png";
@@ -12,6 +13,14 @@ function Home() {
     loop: true,
     autoplay: true,
     animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const anim2 = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData1,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -89,6 +98,33 @@ function Home() {
               GoToMeeting, Microsoft Teams, and more.
             </p>
           </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-2 p-12">
+        <div>
+          <Lottie options={anim2} height={300} width={300} />
+        </div>
+        <div className="pb-6">
+          <h2 className=" pt-6 text-left text-5xl text-gray-700 font-bold">
+            What we offer?
+          </h2>
+          <h4 className="mb-4 pb-4 pt-2 text-left text-2xl text-gray-500 font-bold">
+            Make the most out of every conversation!
+          </h4>
+          <ul className="list-disc">
+            <li className="list-inside text-xl">
+              Transcribe interviews, podcasts, and videos.
+            </li>
+            <li className="list-inside text-xl">
+              Empower team collaboration with easy sharing and search across all
+              your conversations.
+            </li>
+            <li className="list-inside text-xl">
+              Get AI-generated notes for key topics, capture important notes
+              using Transcript highlights, and save these notes automatically to
+              CRM records.
+            </li>
+          </ul>
         </div>
       </div>
       <Footer />
