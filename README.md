@@ -6,6 +6,11 @@ Web conferencing and online meetings have become the new work culture nowadays. 
 
 It could be used along with all video conferencing tools - Google meet, Zoom, Blue Jeans, GoToMeeting, Microsoft Teams, and more. What’s more special is - using our unique machine learning algorithms, it will extract essential Action Items, Decisions, and crucial Insights, and transcript and turn them into a comprehensive, collaborative meeting summary. It will be packed with a bunch of important integrations like - Slack, GitHub, Keep, Notion to further ease your work life.
 
+## Links
+Download: https://github.com/rajat2502/StandNote/files/5685537/StandNote.zip <br/>
+Instructions: https://github.com/rajat2502/StandNote/blob/master/HOW_TO_USE.md <br/>
+Web Application: https://standnote.netlify.app/
+
 ## Theme:
 The theme of our project idea is **Networking and Productivity**. We are reducing the manual efforts and thus increasing the productivity of the team. This will help in removing the Distraction of Note-Taking and reducing the number of Ineffective Meetings and help the team to team to do their best work.
 
