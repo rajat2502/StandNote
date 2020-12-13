@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+import ScrollToTop from 'utils/ScrollToTop';
+
 import Home from 'components/Home';
 import SignUp from 'components/SignUp';
 import Login from 'components/Login';
@@ -33,8 +35,9 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='font-sans'>
       <Router>
+        <ScrollToTop />
         <Switch>
           <Route path='/' exact component={Home} />
           <Route

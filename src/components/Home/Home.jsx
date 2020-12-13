@@ -51,7 +51,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className='bg-gray-200 p-8 sm:p-12'>
+      <div className='bg-gray-200 p-8 sm:p-16'>
         <h1 className='mb-8 text-center text-3xl sm:text-4xl text-gray-700 font-bold'>
           How StandNote helps you?
         </h1>
@@ -103,7 +103,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className='flex flex-col sm:flex-row items-center p-8 sm:p-12'>
+      <div className='flex flex-col sm:flex-row items-center p-10 sm:p-16'>
         <div className='w-full sm:w-1/2 m-4'>
           <Lottie options={anim2} height={280} width={280} />
         </div>
@@ -125,7 +125,7 @@ function Home() {
             <li className='pb-2 list-inside text-xl'>
               Get AI-generated notes for key topics, capture important notes
               using Transcript highlights, and save these notes automatically to
-              CRM records.
+              your dashboard.
             </li>
           </ul>
         </div>
