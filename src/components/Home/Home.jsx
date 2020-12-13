@@ -62,7 +62,7 @@ function Home() {
               src={require('assets/blogger.png').default}
               alt='record'
             />
-            <h4 className='my-2 pb-4 pt-2 text-center text-2xl text-gray-500 font-bold'>
+            <h4 className='my-2 pb-4 pt-2 text-center text-2xl text-gray-700 font-bold'>
               Stay focused and productive
             </h4>
             <p className='text-xl text-gray-800 sm:text-justify'>
@@ -77,7 +77,7 @@ function Home() {
               src={require('assets/businessmen.png').default}
               alt='record'
             />
-            <h4 className='my-2 pb-4 pt-2 text-center text-2xl text-gray-500 font-bold'>
+            <h4 className='my-2 pb-4 pt-2 text-center text-2xl text-gray-700 font-bold'>
               Sharable smart meeting notes
             </h4>
             <p className='text-xl text-gray-800 sm:text-justify'>
@@ -92,7 +92,7 @@ function Home() {
               src={require('assets/Notion.png').default}
               alt='record'
             />
-            <h4 className='my-2 pb-4 pt-2 text-center text-2xl text-gray-500 font-bold'>
+            <h4 className='my-2 pb-4 pt-2 text-center text-2xl text-gray-700 font-bold'>
               Directly save to Notion
             </h4>
             <p className='text-xl text-gray-800 sm:text-justify'>

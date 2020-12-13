@@ -65,7 +65,7 @@ const Integrations = ({ user }) => {
           </p>
         </div>
       ) : (
-        <form onSubmit={submitCredentials}>
+        <form style={{ minWidth: 330 }} onSubmit={submitCredentials}>
           <p className='text-lg font-bold text-gray-700 mt-4'>
             Notion v2 Token:
             <input
@@ -92,6 +92,14 @@ const Integrations = ({ user }) => {
           >
             Submit Details
           </button>
+          <a
+            className='text-center block w-full mt-2 text-blue-600 underline text-sm'
+            href='https://www.redgregory.com/notion/2020/6/15/9zuzav95gwzwewdu1dspweqbv481s5'
+            rel='noreferrer'
+            target='_blank'
+          >
+            (How to get Notion v2 Token for my account?)
+          </a>
         </form>
       )}
     </div>
