@@ -28,9 +28,9 @@ The theme of our project idea is **Networking and Productivity**. We are reducin
 - [x] Help People Do Their Best Work
 - [x] Get MoM for any online and offline meeting
 - [x] Automatically creates a meeting summary after each meeting
-- [x] Share, edit, search and collaborate on the MOMs
-- [x] Dashboard to organize the MoMs
-- [x] Send mail to the user when the MoM is generated
+- [x] Share and edit the generated MoMs
+- [x] Dashboard section to organize the MoMs
+- [x] Send email to the user when the MoM is generated
 - [X] Easy to use markdown templates that suit the agenda of the meeting.
 - [X] Manage & organize meeting notes as per teams.
 - [x] Directly push the MoM to the respective Slack Channels and Notions. 
@@ -40,13 +40,9 @@ The theme of our project idea is **Networking and Productivity**. We are reducin
 
 - Directly push the MoM to the respective Trello boards and repositories.
 - Analysing the ambience of a meeting by performing sentiment analysis on it.
+- Search and collaborate on the MOMs
+- Timeline (like version control) on the meeting notes.
 
-- search and collaborate on the MOMs
-- Timeline (like version control) on the notes.
-
-
-
-## How to Get Started?
 
 
 #### GitHub Repository Structure
