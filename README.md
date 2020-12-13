@@ -54,9 +54,10 @@ The theme of our project idea is **Networking and Productivity**. We are reducin
 | S.No. | Branch Name                                                    | Purpose                           |
 | ----- | -------------------------------------------------------------- | --------------------------------- |
 | 1.    | [master](https://github.com/rajat2502/StandNote/tree/master)   | contains the chrome extension  |
-| 2.    | [django](https://github.com/rajat2502/StandNote/tree/django)   | contains all backend code         |
-| 3.    | [React-Frontend](https://github.com/rajat2502/StandNote/tree/React-Frontend)   | contains all frontend code         |
-| 4.    | [ml](https://github.com/rajat2502/StandNote/tree/ml)   | contains all ml codes       |
+| 2.    | [React-Frontend](https://github.com/rajat2502/StandNote/tree/React-Frontend)   | contains all frontend code         |
+| 3.    | [django](https://github.com/rajat2502/StandNote/tree/django)   | contains all backend code         |
+| 4.    | [home](https://github.com/rajat2502/StandNote/tree/home)   | contains the home page code         |
+| 5.    | [ml](https://github.com/rajat2502/StandNote/tree/ml)   | contains all ml codes       |
 
 ## Team:
 
