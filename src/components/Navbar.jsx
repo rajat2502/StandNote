@@ -32,7 +32,7 @@ function Navbar() {
           <li className='md:ml-4'>
             <Link
               className='border-t block no-underline py-2 md:border-none md:p-0 font-bold'
-              to='/'
+              to='/integrations'
             >
               Integrations
             </Link>
