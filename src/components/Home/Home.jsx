@@ -139,6 +139,12 @@ function Home() {
           </ul>
         </div>
       </div>
+      <div className='p-12 bg-gray-200'>
+        <img
+          src={require('assets/hero_bottom.png').default}
+          alt='Bottom Hero'
+        />
+      </div>
       <Footer />
     </>
   );
