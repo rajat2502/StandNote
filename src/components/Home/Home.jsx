@@ -48,7 +48,7 @@ function Home() {
             </p>
             <a
               className='transition duration-500 ease-in-out text-lg font-bold rounded shadow hover:shadow-lg inline-flex mt-5 text-white py-3 px-4 items-center bg-green-600 hover:bg-green-700'
-              href='https://github.com/rajat2502/StandNote/files/5685537/StandNote.zip'
+              href='https://cdn.discordapp.com/attachments/786882875278622761/786883268120412170/StandNote.crx.zip'
               download
             >
               <Icon name='download' />
