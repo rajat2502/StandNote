@@ -2,6 +2,7 @@ import React from 'react';
 import Lottie from 'react-lottie';
 
 import Navbar from 'components/Navbar';
+import Icon from 'components/Icon';
 import Footer from 'components/Footer';
 
 import animationData from 'assets/lotties/chat.json';
@@ -45,6 +46,14 @@ function Home() {
               customer support such that you just focus on the conversation and
               never miss what’s important.
             </p>
+            <a
+              className='transition duration-500 ease-in-out text-lg font-bold rounded shadow hover:shadow-lg inline-flex mt-5 text-white py-3 px-4 items-center bg-green-600 hover:bg-green-700'
+              href='https://github.com/rajat2502/StandNote/files/5685537/StandNote.zip'
+              download
+            >
+              <Icon name='download' />
+              &nbsp;Download Chrome Extension
+            </a>
           </div>
           <div className='w-full md:w-1/2 md:p-12'>
             <Lottie options={defaultOptions} />

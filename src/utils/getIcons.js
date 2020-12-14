@@ -193,6 +193,30 @@ const getIcons = () => [
     height: '40',
     viewBox: '0 0 48 48',
   },
+  {
+    id: 10,
+    name: 'download',
+    svg: (
+      <g
+        fill='none'
+        strokeMiterlimit='10'
+        fontFamily='none'
+        fontSize='none'
+        fontWeight='none'
+        textAnchor='none'
+        style={{ mixBlendMode: 'normal' }}
+      >
+        <path d='M0 172V0h172v172z'></path>
+        <path
+          fill='#fff'
+          d='M75.25 14.333c-5.856 0-10.75 4.895-10.75 10.75v46.584H32.866L86 124.8l53.134-53.134H107.5V25.083c0-5.855-4.894-10.75-10.75-10.75zm3.583 14.334h14.334V86h11.366L86 104.533 67.467 86h11.366zm-64.5 114.666v14.334h143.334v-14.334z'
+        ></path>
+      </g>
+    ),
+    width: '24',
+    height: '24',
+    viewBox: '0 0 172 172',
+  },
 ];
 
 export default getIcons;

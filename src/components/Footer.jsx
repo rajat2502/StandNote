@@ -38,6 +38,14 @@ function Footer() {
           <Link to='/' className='mx-2 text-lg hover:underline'>
             Home
           </Link>
+          <a
+            className='mx-2 text-lg hover:underline'
+            href='https://github.com/rajat2502/StandNote/wiki/How-to-use-StandNote%3F'
+            rel='noreferrer'
+            target='_blank'
+          >
+            How to use
+          </a>
           <Link to='/login' className='mx-2 text-lg hover:underline'>
             Login
           </Link>
