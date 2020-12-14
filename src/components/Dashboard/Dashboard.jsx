@@ -10,6 +10,7 @@ function Dashboard({ user }) {
 
   const getNotesData = useCallback(async () => {
     const data = await getAllNotes(user.email);
+    data.reverse();
     setNotesData(data);
     setLoading(false);
   }, [user.email]);

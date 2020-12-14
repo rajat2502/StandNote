@@ -29,5 +29,198 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      (function () {
+        function r(r) {
+          r = r.replace(/\/$/, '');
+          const t = '/v1/web/algo',
+            e = new RegExp('/v1/web/algo$');
+          return e.test(r) ? r : r + t;
+        }
+        var t, e, i, o, s;
+        (window.Algorithmia = window.Algorithmia || {}),
+          Algorithmia.query &&
+            console.error('Warning: algorithmia.js loaded twice'),
+          Algorithmia.client &&
+            console.error('Warning: algorithmia.js loaded twice'),
+          Algorithmia.apiAddress &&
+            console.log(
+              'Using alternate API server: ' + Algorithmia.apiAddress
+            ),
+          (s = function () {
+            return void 0 !== Algorithmia.apiAddress
+              ? Algorithmia.apiAddress
+              : 'https://api.algorithmia.com/v1/web/algo';
+          }),
+          (o = /^(?:algo:\/\/|\/|)(\w+\/.+)$/),
+          (Algorithmia.query = function (r, t, e, i) {
+            return Algorithmia.client(t)
+              .algo(r)
+              .pipe(e, function (r) {
+                return r.error
+                  ? i(r.error.message || r.error)
+                  : i(void 0, r.result);
+              });
+          }),
+          (Algorithmia.client = function (t, i) {
+            return (
+              (t = t || Algorithmia.apiKey), (i = r(i || s())), new e(t, i)
+            );
+          }),
+          (e = function (r, e) {
+            (this.api_key = r),
+              (this.api_address = e),
+              (this.algo = function (r) {
+                return r && 'string' == typeof r
+                  ? new t(this, r)
+                  : (console.error('Invalid algorithm url: ' + r), null);
+              });
+          }),
+          (Algorithmia.algo = function (r) {
+            return Algorithmia.client().algo(r);
+          }),
+          (t = function (r, t) {
+            if ('string' != typeof t || !t.match(o))
+              throw 'Invalid Algorithm URI (expected /owner/algo)';
+            (this.client = r),
+              (this.algo_uri = t.match(o)[1]),
+              (this.pipe = function (t, e) {
+                var o;
+                return (
+                  Algorithmia.startTask(),
+                  (o = new i(
+                    (function (e) {
+                      return function (i) {
+                        var o, s;
+                        return (
+                          (s = new XMLHttpRequest()),
+                          (s.onreadystatechange = function () {
+                            var r, t;
+                            if (4 === s.readyState)
+                              if ((Algorithmia.finishTask(), 0 === s.status))
+                                i(
+                                  s.responseText
+                                    ? {
+                                        error:
+                                          'API connection error: ' +
+                                          s.responseText,
+                                      }
+                                    : { error: 'API connection error' }
+                                );
+                              else if (502 === s.status)
+                                i({ error: 'API error, bad gateway' });
+                              else if (503 === s.status)
+                                i({ error: 'API error, service unavailable' });
+                              else if (504 === s.status)
+                                i({ error: 'API error, server timeout' });
+                              else
+                                try {
+                                  (t = JSON.parse(s.responseText)), i(t);
+                                } catch (e) {
+                                  (r = e),
+                                    i({
+                                      error:
+                                        'API error (status ' +
+                                        s.status +
+                                        '): ' +
+                                        r,
+                                    });
+                                }
+                          }),
+                          (o = r.api_address + '/' + e.algo_uri),
+                          s.open('POST', o, !0),
+                          s.setRequestHeader(
+                            'Content-Type',
+                            'application/json'
+                          ),
+                          s.setRequestHeader(
+                            'Accept',
+                            'application/json, text/javascript'
+                          ),
+                          r.api_key &&
+                            s.setRequestHeader(
+                              'Authorization',
+                              'Simple ' + r.api_key
+                            ),
+                          s.send(JSON.stringify(t))
+                        );
+                      };
+                    })(this)
+                  )),
+                  e && o.then(e),
+                  o
+                );
+              });
+          }),
+          (i = function (r) {
+            var t;
+            (this.isComplete = !1),
+              (this.listeners = []),
+              (this.result = void 0),
+              (t = (function (r) {
+                return function (t) {
+                  var e, i, o, s;
+                  for (
+                    r.result = t,
+                      r.isComplete = !0,
+                      s = r.listeners,
+                      i = 0,
+                      o = s.length;
+                    o > i;
+                    i++
+                  ) {
+                    e = s[i];
+                    try {
+                      e(t);
+                    } catch (n) {}
+                  }
+                };
+              })(this)),
+              (this.then = (function (r) {
+                return function (t) {
+                  if (!r.isComplete) return r.listeners.push(t);
+                  try {
+                    return t(r.result);
+                  } catch (e) {}
+                };
+              })(this)),
+              r(t);
+          }),
+          (Algorithmia.tasksInProgress = 0),
+          (Algorithmia.startTask = function () {
+            var r, t, e, i;
+            if (0 === Algorithmia.tasksInProgress)
+              for (
+                i = document.getElementsByClassName('algo-spinner'),
+                  t = 0,
+                  e = i.length;
+                e > t;
+                t++
+              )
+                (r = i[t]), (r.style.visibility = 'visible');
+            Algorithmia.tasksInProgress++;
+          }),
+          (Algorithmia.finishTask = function () {
+            var r, t, e, i;
+            if (
+              (Algorithmia.tasksInProgress--, 0 === Algorithmia.tasksInProgress)
+            )
+              for (
+                i = document.getElementsByClassName('algo-spinner'),
+                  t = 0,
+                  e = i.length;
+                e > t;
+                t++
+              )
+                (r = i[t]), (r.style.visibility = 'hidden');
+            else
+              Algorithmia.tasksInProgress < 0 &&
+                console.error('Algorithmia task error (unknown task finished)');
+          }),
+          Algorithmia.onload &&
+            'function' == typeof Algorithmia.onload &&
+            Algorithmia.onload();
+      }.call(this));
+    </script>
   </body>
 </html>

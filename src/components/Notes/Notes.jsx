@@ -7,6 +7,7 @@ import {
   updateNote,
   getNotionCredentials,
   pushMkdToNotion,
+  getSentiments,
 } from 'api';
 
 import Icon from 'components/Icon';
@@ -22,6 +23,7 @@ const Notes = ({ user }) => {
   const [hasNotion, setHasNotion] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [msg, setMsg] = useState('');
+  const [sentiments, setSentiments] = useState({});
 
   const changeEditing = () => {
     setEditing((state) => !state);
@@ -72,12 +74,10 @@ const Notes = ({ user }) => {
     setTimeout(() => setMsg(''), 3000);
   };
 
-  const getNoteData = useCallback(async () => {
-    const res = await getNote(id);
-    setNoteData(res);
-    setMom(res.markdown);
-    setLoading(false);
-  }, [id]);
+  const getSentimentData = useCallback(async (content) => {
+    const res = await getSentiments(content);
+    setSentiments(res);
+  }, []);
 
   const getNotionData = useCallback(async () => {
     const data = await getNotionCredentials(user.email);
@@ -86,10 +86,18 @@ const Notes = ({ user }) => {
     }
   }, [user.email]);
 
+  const getNoteData = useCallback(async () => {
+    const res = await getNote(id);
+    setNoteData(res);
+    setMom(res.markdown);
+    await getNotionData();
+    await getSentimentData(res.content);
+    setLoading(false);
+  }, [getNotionData, getSentimentData, id]);
+
   useEffect(() => {
     getNoteData();
-    getNotionData();
-  }, [getNoteData, getNotionData]);
+  }, [getNoteData]);
 
   if (loading) {
     return (
@@ -169,10 +177,24 @@ const Notes = ({ user }) => {
             <Icon name='score' /> &nbsp;&nbsp;
             <span>{noteData.score}/100</span>
           </p>
+          <div className='my-4'>
+            <p className='text-xl'>Ambience of meeting:</p>
+            <p>
+              <span title='Positive' className='pr-4 text-xl'>
+                &#x1F604; {sentiments.positive}
+              </span>
+              <span title='Neutral' className='pr-4 text-xl'>
+                &#x1F642; {sentiments.neutral}
+              </span>
+              <span title='Negative' className='pr-4 text-xl'>
+                &#x1F613; {sentiments.negative}
+              </span>
+            </p>
+          </div>
           <button
             onClick={pushToNotion}
             disabled={!hasNotion || submitting}
-            className='text-lg focus:outline-none mt-6 font-bold shadow-md hover:shadow-lg py-2 px-8 rounded bg-white flex items-center'
+            className='text-lg focus:outline-none mt-6 font-bold shadow-md hover:shadow-lg py-2 px-8 rounded bg-white flex items-center justify-center'
           >
             <Icon name='notion' />
             Push to Notion

@@ -98,3 +98,13 @@ export const pushMkdToNotion = async (obj) => {
     return { err: 'Something went wrong!' };
   }
 };
+
+export const getSentiments = async (input) => {
+  const { result } = await window.Algorithmia.client(
+    process.env.REACT_APP_ALGORITHMIA_API
+  )
+    .algo('algobox/SentimentAnalysis/0.1.0?timeout=300')
+    .pipe(input);
+
+  return result;
+};
