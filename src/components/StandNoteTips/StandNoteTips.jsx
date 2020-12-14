@@ -21,7 +21,12 @@ const StandNoteTips = () => {
             We will be adding support for more languages in the future.
           </li>
           <li>
-            &#x1F507; &nbsp;For best results, sit in a noise-free enviornment.
+            &#x23F8; &nbsp;Effective use of action buttons of our Extensions
+            toolbar will be a great utility tool and will come in handy while
+            transcribing into meeting notes.
+          </li>
+          <li>
+            &#x1F50A; &nbsp;For best results, sit in a noise-free enviornment.
           </li>
           <li>
             &#x1F4C3; &nbsp;Please submit your Notion credentials to sync your
