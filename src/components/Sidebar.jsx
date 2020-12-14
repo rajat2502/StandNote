@@ -30,34 +30,34 @@ const Sidebar = ({ user, setUser }) => {
         <div className='mt-4 flex flex-col'>
           <Link
             to='/'
-            className='mt-2 cursor-pointer p-2 font-bold text-gray-800 text-sm hover:bg-gray-200 rounded'
+            className='mt-2 cursor-pointer p-2 text-gray-800 font-bold hover:bg-gray-200 rounded'
           >
             Home
           </Link>
           <Link
             id={selected === '/dashboard' ? 'selected-link' : ''}
             to='/dashboard'
-            className='mt-2 cursor-pointer p-2 font-bold text-gray-800 text-sm hover:bg-gray-200 rounded'
+            className='mt-2 cursor-pointer p-2 text-gray-800 font-bold hover:bg-gray-200 rounded'
           >
             Dashboard
           </Link>
           <Link
             id={selected === '/integrations' ? 'selected-link' : ''}
             to='/integrations'
-            className='mt-2 cursor-pointer p-2 font-bold text-gray-800 text-sm hover:bg-gray-200 rounded'
+            className='mt-2 cursor-pointer p-2 text-gray-800 font-bold hover:bg-gray-200 rounded'
           >
             Integrations
           </Link>
           <Link
             id={selected === '/tips' ? 'selected-link' : ''}
             to='/tips'
-            className='mt-2 cursor-pointer p-2 font-bold text-gray-800 text-sm hover:bg-gray-200 rounded'
+            className='mt-2 cursor-pointer p-2 text-gray-800 font-bold hover:bg-gray-200 rounded'
           >
             StandNote Usage Tips
           </Link>
         </div>
       </div>
-      <div className='flex text-center flex-col text-sm'>
+      <div className='flex text-center flex-col text'>
         <p>{user.email}</p>
         <span className='text-gray-800'>●</span>
         <div>
