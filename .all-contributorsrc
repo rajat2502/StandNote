@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "PragatiVerma18",
+      "name": "Pragati Verma",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/42115530?v=4",
+      "profile": "https://www.linkedin.com/in/PragatiVerma18/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "StandNote",
+  "projectOwner": "rajat2502",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
