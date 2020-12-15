@@ -86,6 +86,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://github.com/shristisingh29"><img src="https://avatars1.githubusercontent.com/u/44435610?v=4" width="100px;" alt=""/><br /><sub><b>Shristi Singh</b></sub></a><br /><a href="#design-shristisingh29" title="Design">🎨</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/friskycodeur/"><img src="https://avatars3.githubusercontent.com/u/45481137?v=4" width="100px;" alt=""/><br /><sub><b>Prateek Maheshwari</b></sub></a><br /><a href="https://github.com/rajat2502/StandNote/commits?author=friskycodeur" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/PragatiVerma18/"><img src="https://avatars2.githubusercontent.com/u/42115530?v=4" width="100px;" alt=""/><br /><sub><b>Pragati Verma</b></sub></a><br /><a href="https://github.com/rajat2502/StandNote/commits?author=PragatiVerma18" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/geekquad/"><img src="https://avatars1.githubusercontent.com/u/47635806?v=4" width="100px;" alt=""/><br /><sub><b>Aditya Kumar Gupta</b></sub></a><br /><a href="https://github.com/rajat2502/StandNote/commits?author=geekquad" title="Code">💻</a></td>
