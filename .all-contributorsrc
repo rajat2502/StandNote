@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "shristisingh29",
+      "name": "Shristi Singh",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/44435610?v=4",
+      "profile": "https://github.com/shristisingh29",
+      "contributions": [
+        "design"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "StandNote",
+  "projectOwner": "rajat2502",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
