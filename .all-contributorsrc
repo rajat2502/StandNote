@@ -12,6 +12,21 @@
       "profile": "https://www.linkedin.com/in/PragatiVerma18/",
       "contributions": [
         "code"
+]},{
+      "login": "geekquad",
+      "name": "Aditya Kumar Gupta",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/47635806?v=4",
+      "profile": "https://www.linkedin.com/in/geekquad/",
+      "contributions": [
+        "code"]},
+        
+      {"login": "rajat2502",
+      "name": "Rajat Verma",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/42200276?v=4",
+      "profile": "https://rajat2502.github.io/portfolio/",
+      "contributions": [
+        "code",
+        "design"
       ]
     }
   ],
