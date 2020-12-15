@@ -87,6 +87,11 @@ function reloadBackgroundScript() {
   chrome.extension.getBackgroundPage().window.location.reload();
 }
 
+function cancelStream() {
+  chrome.browserAction.setIcon({ path: '../assets/icon48.png' });
+  reloadBackgroundScript();
+}
+
 // get mic audio
 function getMicAudio() {
   navigator.mediaDevices.getUserMedia(constraints).then((mic) => {
@@ -156,7 +161,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       muteMic();
       break;
     case 'cancel':
-      reloadBackgroundScript();
+      cancelStream();
       break;
     default:
       break;
