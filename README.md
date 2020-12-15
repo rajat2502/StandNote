@@ -1,4 +1,7 @@
 <div align="center"> <img align="center" alt="standnote" src="https://i.ibb.co/VHMQVSf/stand-note-full1.png" height='110' width='460'></div>
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Turning Conversations into Actions
 
@@ -73,3 +76,22 @@ The theme of our project idea is **Networking and Productivity**. We are reducin
 [![Uses Git](https://forthebadge.com/images/badges/uses-git.svg)](https://github.com/rajat2502/StandNote/) [![Uses HTML](https://forthebadge.com/images/badges/uses-html.svg)](https://github.com/rajat2502/StandNote/) [![Uses CSS](https://forthebadge.com/images/badges/uses-css.svg)](https://github.com/rajat2502/StandNote/) [![Uses JS](https://forthebadge.com/images/badges/uses-js.svg)](https://github.com/rajat2502/StandNote/)
 [![Built with love](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/rajat2502/StandNote/) [![Built By Developers](https://forthebadge.com/images/badges/built-by-developers.svg)](https://github.com/rajat2502/StandNote/) [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://github.com/rajat2502/StandNote/)
 
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/shristisingh29"><img src="https://avatars1.githubusercontent.com/u/44435610?v=4" width="100px;" alt=""/><br /><sub><b>Shristi Singh</b></sub></a><br /><a href="#design-shristisingh29" title="Design">🎨</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
