@@ -1,7 +1,5 @@
 <div align="center"> <img align="center" alt="standnote" src="https://i.ibb.co/VHMQVSf/stand-note-full1.png" height='110' width='460'></div>
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 
 ## Turning Conversations into Actions
 
