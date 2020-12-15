@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "geekquad",
+      "name": "Aditya Kumar Gupta",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/47635806?v=4",
+      "profile": "https://www.linkedin.com/in/geekquad/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "StandNote",
+  "projectOwner": "rajat2502",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
