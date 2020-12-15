@@ -87,6 +87,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://www.linkedin.com/in/friskycodeur/"><img src="https://avatars3.githubusercontent.com/u/45481137?v=4" width="100px;" alt=""/><br /><sub><b>Prateek Maheshwari</b></sub></a><br /><a href="https://github.com/rajat2502/StandNote/commits?author=friskycodeur" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/PragatiVerma18/"><img src="https://avatars2.githubusercontent.com/u/42115530?v=4" width="100px;" alt=""/><br /><sub><b>Pragati Verma</b></sub></a><br /><a href="https://github.com/rajat2502/StandNote/commits?author=PragatiVerma18" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/geekquad/"><img src="https://avatars1.githubusercontent.com/u/47635806?v=4" width="100px;" alt=""/><br /><sub><b>Aditya Kumar Gupta</b></sub></a><br /><a href="https://github.com/rajat2502/StandNote/commits?author=geekquad" title="Code">💻</a></td>
+    <td align="center"><a href="https://rajat2502.github.io/portfolio/"><img src="https://avatars2.githubusercontent.com/u/42200276?v=4" width="100px;" alt=""/><br /><sub><b>Rajat Verma</b></sub></a><br /><a href="https://github.com/rajat2502/StandNote/commits?author=rajat2502" title="Code">💻</a> <a href="#design-rajat2502" title="Design">🎨</a></td>
   </tr>
 </table>
 
