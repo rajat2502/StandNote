@@ -1,6 +1,5 @@
 <div align="center"> <img align="center" alt="standnote" src="https://i.ibb.co/VHMQVSf/stand-note-full1.png" height='110' width='460'></div>
 
-
 ## Turning Conversations into Actions
 
 Web conferencing and online meetings have become the new work culture nowadays. But somewhere along the lines, we often keep missing the crux of the discussions in these online meetings, and here comes our solution - **StandNote**. It is your easy to use online meeting assistant that backs you up with automated meeting minutes in every conversation. It will help you save time on board meetings, team management, and customer support such that you just focus on the conversation and never miss what’s important.
@@ -8,11 +7,13 @@ Web conferencing and online meetings have become the new work culture nowadays. 
 It could be used along with all video conferencing tools - Google meet, Zoom, Blue Jeans, GoToMeeting, Microsoft Teams, and more. What’s more special is - using our unique machine learning algorithms, it will extract essential Action Items, Decisions, and crucial Insights, and transcript and turn them into a comprehensive, collaborative meeting summary. It will be packed with a bunch of important integrations like - Slack, GitHub, Keep, Notion to further ease your work life.
 
 ## Links
-Download (the complete folder): https://drive.google.com/drive/folders/1nELLlARVxaTZiPIou4B6CW6hR-lI6zZo?usp=sharing <br/>
+
+Download from Chrome Web Store: https://chrome.google.com/webstore/detail/standnote/emgbjefldokjjjoofmidcnigmienlclm <br/>
 Instructions: https://github.com/rajat2502/StandNote/blob/master/HOW_TO_USE.md <br/>
 Web Application: https://standnote.netlify.app/
 
 ## Theme:
+
 The theme of our project idea is **Networking and Productivity**. We are reducing the manual efforts and thus increasing the productivity of the team. This will help in removing the Distraction of Note-Taking and reducing the number of Ineffective Meetings and help the team to team to do their best work.
 
 ## Tech Stack:
@@ -25,7 +26,7 @@ The theme of our project idea is **Networking and Productivity**. We are reducin
 - **Hosting:** Heroku, Netlify
 - **Machine Learning:** Python
 - **External APIs:** Speech to Text (Microsoft Azure)
-- **Code Editor and tools**: VS Code, Google Collab 
+- **Code Editor and tools**: VS Code, Google Collab
 
 ## Features:
 
@@ -37,9 +38,9 @@ The theme of our project idea is **Networking and Productivity**. We are reducin
 - [x] Share and edit the generated MoMs
 - [x] Dashboard section to organize the MoMs
 - [x] Send email to the user when the MoM is generated
-- [X] Easy to use markdown templates that suit the agenda of the meeting.
-- [X] Manage & organize meeting notes as per teams.
-- [x] Directly push the MoM to the respective Slack Channels and Notions. 
+- [x] Easy to use markdown templates that suit the agenda of the meeting.
+- [x] Manage & organize meeting notes as per teams.
+- [x] Directly push the MoM to the respective Slack Channels and Notions.
 - [x] Can be used with any Video conferencing app.
 
 ## Future Prospects:
@@ -49,31 +50,28 @@ The theme of our project idea is **Networking and Productivity**. We are reducin
 - Search and collaborate on the MOMs
 - Timeline (like version control) on the meeting notes.
 
-
-
 #### GitHub Repository Structure
 
-| S.No. | Branch Name                                                    | Purpose                           |
-| ----- | -------------------------------------------------------------- | --------------------------------- |
-| 1.    | [master](https://github.com/rajat2502/StandNote/tree/master)   | contains the chrome extension  |
-| 2.    | [React-Frontend](https://github.com/rajat2502/StandNote/tree/React-Frontend)   | contains all frontend code         |
-| 3.    | [django](https://github.com/rajat2502/StandNote/tree/django)   | contains all backend code         |
-| 4.    | [home](https://github.com/rajat2502/StandNote/tree/home)   | contains the home page code         |
-| 5.    | [ml](https://github.com/rajat2502/StandNote/tree/ml)   | contains all ml codes       |
+| S.No. | Branch Name                                                                  | Purpose                       |
+| ----- | ---------------------------------------------------------------------------- | ----------------------------- |
+| 1.    | [master](https://github.com/rajat2502/StandNote/tree/master)                 | contains the chrome extension |
+| 2.    | [React-Frontend](https://github.com/rajat2502/StandNote/tree/React-Frontend) | contains all frontend code    |
+| 3.    | [django](https://github.com/rajat2502/StandNote/tree/django)                 | contains all backend code     |
+| 4.    | [home](https://github.com/rajat2502/StandNote/tree/home)                     | contains the home page code   |
+| 5.    | [ml](https://github.com/rajat2502/StandNote/tree/ml)                         | contains all ml codes         |
 
 ## Team:
 
-| S.No. | Name               | Role                      | GitHub Username:octocat:                             |
-| ----- | ------------------ | ------------------------- | ---------------------------------------------------- |
-| 1.    | Rajat Verma        | Frontend Developer        | [@rajat2502](https://github.com/rajat2502)           |
-| 2.    | Pragati Verma      | Backend Developer        | [@PragatiVerma18](https://github.com/PragatiVerma18)           |
-| 3.    | Shristi Singh      | UI Designer               | [@shristisingh29](https://github.com/shristisingh29) |
-| 4.    | Prateek Maheshwari | Backend Developer         | [@friskycodeur](https://github.com/friskycodeur)     |
-| 5.    | Aditya Kumar Gupta | Machine Learning Developer  | [@geekquad](https://github.com/geekquad)             |
+| S.No. | Name               | Role                       | GitHub Username:octocat:                             |
+| ----- | ------------------ | -------------------------- | ---------------------------------------------------- |
+| 1.    | Rajat Verma        | Frontend Developer         | [@rajat2502](https://github.com/rajat2502)           |
+| 2.    | Pragati Verma      | Backend Developer          | [@PragatiVerma18](https://github.com/PragatiVerma18) |
+| 3.    | Shristi Singh      | UI Designer                | [@shristisingh29](https://github.com/shristisingh29) |
+| 4.    | Prateek Maheshwari | Backend Developer          | [@friskycodeur](https://github.com/friskycodeur)     |
+| 5.    | Aditya Kumar Gupta | Machine Learning Developer | [@geekquad](https://github.com/geekquad)             |
 
 [![Uses Git](https://forthebadge.com/images/badges/uses-git.svg)](https://github.com/rajat2502/StandNote/) [![Uses HTML](https://forthebadge.com/images/badges/uses-html.svg)](https://github.com/rajat2502/StandNote/) [![Uses CSS](https://forthebadge.com/images/badges/uses-css.svg)](https://github.com/rajat2502/StandNote/) [![Uses JS](https://forthebadge.com/images/badges/uses-js.svg)](https://github.com/rajat2502/StandNote/)
 [![Built with love](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/rajat2502/StandNote/) [![Built By Developers](https://forthebadge.com/images/badges/built-by-developers.svg)](https://github.com/rajat2502/StandNote/) [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://github.com/rajat2502/StandNote/)
-
 
 ## Contributors ✨
 
@@ -94,6 +92,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
