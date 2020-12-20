@@ -8,9 +8,9 @@ It could be used along with all video conferencing tools - Google meet, Zoom, Bl
 
 ## Links
 
-Download from Chrome Web Store: https://chrome.google.com/webstore/detail/standnote/emgbjefldokjjjoofmidcnigmienlclm <br/>
-Instructions: https://github.com/rajat2502/StandNote/blob/master/HOW_TO_USE.md <br/>
-Web Application: https://standnote.netlify.app/
+**Download from Chrome Web Store**: https://chrome.google.com/webstore/detail/standnote/emgbjefldokjjjoofmidcnigmienlclm <br/>
+**Instructions:** https://github.com/rajat2502/StandNote/blob/master/HOW_TO_USE.md <br/>
+**Web Application**: https://standnote.netlify.app/
 
 ## Theme:
 
