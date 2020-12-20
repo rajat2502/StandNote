@@ -49,7 +49,8 @@ function Home() {
             <a
               className='transition duration-500 ease-in-out text-lg font-bold rounded shadow hover:shadow-lg inline-flex mt-5 text-white py-3 px-4 items-center bg-green-600 hover:bg-green-700'
               href='https://chrome.google.com/webstore/detail/standnote/emgbjefldokjjjoofmidcnigmienlclm'
-              download
+              target='_blank'
+              rel='noreferrer'
             >
               <Icon name='download' />
               &nbsp;Download Chrome Extension
