@@ -12,7 +12,7 @@ Web conferencing and online meetings have become the new work culture nowadays. 
 
 StandNote also fits into the current online education scenario where most of the classes take place over online platforms like Google Meet and Zoom. We help students with quick and concise notes that help them to revise and memorize the concepts better.
 
-## Links
+## Links:
 
 <a target="_blank" href="https://chrome.google.com/webstore/detail/standnote/emgbjefldokjjjoofmidcnigmienlclm"><img src="https://tunnello.com/wp-content/uploads/2018/09/available-chrome-store-tunnello.png" alt="Google Chrome Web Store" height='90' width='250'/></a>
 
@@ -20,7 +20,7 @@ StandNote also fits into the current online education scenario where most of the
 - **Instructions:** https://github.com/rajat2502/StandNote/blob/master/HOW_TO_USE.md <br/>
 - **Web Application**: https://standnote.netlify.app/
 
-## Demo
+## Demo Video:
 
 <a href="https://www.youtube.com/watch?v=tGfVSJvoNuo"> <img src="https://user-images.githubusercontent.com/42115530/102794320-3a48af80-43d1-11eb-9055-cfdec87cf1b1.jpg" alt="Demo Video" height='250' width='400'/> </a>
 
