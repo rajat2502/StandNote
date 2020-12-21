@@ -19,6 +19,11 @@ $ git checkout React-Frontend
 $ npm i
 ```
 
+- Setup environment variables
+  - Get a new Google OAuth Client ID from [https://console.developers.google.com/apis/credentials](https://console.developers.google.com/apis/credentials) and place it in front of `REACT_APP_GOOGLE_OAUTH_CLIENT_ID`
+  - Get a new Algorithmia Key from [https://algorithmia.com/](https://algorithmia.com/) and place it in front of `REACT_APP_ALGORITHMIA_API`
+  - Rename the file `.env.example` to `.env`
+
 - Run the Server and see the demo at [http://localhost:3000/](http://localhost:3000/)
 ```
 $ npm start
