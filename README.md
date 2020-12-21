@@ -1,4 +1,4 @@
-<div align="center"> <a href="https://standnote.netlify.app/"> <img align="center" alt="standnote" src="https://i.ibb.co/VHMQVSf/stand-note-full1.png" height='90' width='360'> </a> </div>
+<div align="center"> <a href="https://standnote.netlify.app/"> <img align="center" alt="standnote" src="https://i.ibb.co/VHMQVSf/stand-note-full1.png" height='95' width='380'> </a> </div>
 
 ## Turning Conversations into Actions
 
@@ -8,7 +8,7 @@ StandNote also fits into the current online education scenario where most of the
 
 ## Links
 
-<a href="https://chrome.google.com/webstore/detail/standnote/emgbjefldokjjjoofmidcnigmienlclm"><img src="https://tunnello.com/wp-content/uploads/2018/09/available-chrome-store-tunnello.png" alt="Google Chrome Web Store" height='90' width='250'/></a>
+<a target="_blank" href="https://chrome.google.com/webstore/detail/standnote/emgbjefldokjjjoofmidcnigmienlclm"><img src="https://tunnello.com/wp-content/uploads/2018/09/available-chrome-store-tunnello.png" alt="Google Chrome Web Store" height='90' width='250'/></a>
 
 - **Chrome Extension**: https://bit.ly/StandNote-Extension <br/>
 - **Instructions:** https://github.com/rajat2502/StandNote/blob/master/HOW_TO_USE.md <br/>
@@ -47,20 +47,22 @@ The theme of our project idea is **Networking and Productivity**. We are reducin
 
 ## Future Prospects:
 
-- Directly push the MoM to the respective Trello boards and repositories.
-- Analysing the ambience of a meeting by performing sentiment analysis on it.
-- Search and collaborate on the MOMs
-- Timeline (like version control) on the meeting notes.
+- Voice activity recognition & Speaker separation
+- Desktop application for meetings over desktop and native apps.
+- Integration of more tools like Slack, GitHub, Jira & Trello.
+- Voice activity recognition & Conversation Transcription.
+- Support multiple teams for a single user (teamwise dashboard).
+- Timeline (version control) for the notes.
+- Converting our Extension into a Cross-Browser Extension.
 
 #### GitHub Repository Structure
 
 | S.No. | Branch Name                                                                  | Purpose                       |
 | ----- | ---------------------------------------------------------------------------- | ----------------------------- |
-| 1.    | [master](https://github.com/rajat2502/StandNote/tree/master)                 | contains the chrome extension |
-| 2.    | [React-Frontend](https://github.com/rajat2502/StandNote/tree/React-Frontend) | contains all frontend code    |
-| 3.    | [django](https://github.com/rajat2502/StandNote/tree/django)                 | contains all backend code     |
-| 4.    | [home](https://github.com/rajat2502/StandNote/tree/home)                     | contains the home page code   |
-| 5.    | [ml](https://github.com/rajat2502/StandNote/tree/ml)                         | contains all ml codes         |
+| 1.    | [master](https://github.com/rajat2502/StandNote/tree/master)                 | contains the Chrome Extension |
+| 2.    | [React-Frontend](https://github.com/rajat2502/StandNote/tree/React-Frontend) | contains all Frontend code    |
+| 3.    | [django](https://github.com/rajat2502/StandNote/tree/django)                 | contains all Backend code     |
+| 4.    | [ml](https://github.com/rajat2502/StandNote/tree/ml)                         | contains all ML codes         |
 
 ## Team:
 
