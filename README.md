@@ -64,6 +64,91 @@ The theme of our project idea is **Networking and Productivity**. We are reducin
 | 3.    | [django](https://github.com/rajat2502/StandNote/tree/django)                 | contains all Backend code     |
 | 4.    | [ml](https://github.com/rajat2502/StandNote/tree/ml)                         | contains all ML codes         |
 
+## How to get started locally?
+<details>
+  <summary><strong>Chrome Extension Setup Steps</strong></summary>
+  
+- Fork and Clone the Repo
+```
+$ git clone https://github.com/rajat2502/StandNote.git
+$ cd StandNote
+```
+
+- Open **Google Chrome** and navigate to `chrome://extensions`.
+
+- Enable Developer Mode in **Google Chrome**
+
+- Click on `Add Unpacked Extension` and select `StandNote`
+
+- StandNote Chrome Extension is ready to use!
+  
+</details>
+<details>
+  <summary><strong>Frontend Setup Steps</strong></summary>
+
+- Move to the `React-Frontend` branch
+```
+$ git checkout React-Frontend
+```
+
+- Install the Dependencies from `npm`
+```
+$ npm i
+```
+
+- Setup environment variables
+  - Get a new Google OAuth Client ID from [https://console.developers.google.com/apis/credentials](https://console.developers.google.com/apis/credentials) and place it in front of `REACT_APP_GOOGLE_OAUTH_CLIENT_ID`
+  - Get a new Algorithmia Key from [https://algorithmia.com/](https://algorithmia.com/) and place it in front of `REACT_APP_ALGORITHMIA_API`
+  - Rename the file `.env.example` to `.env`
+
+- Run the Server and see the demo at [http://localhost:3000/](http://localhost:3000/)
+```
+$ npm start
+```
+  
+</details>
+<details>
+  <summary><strong>Backend Setup Steps</strong></summary>
+  
+- Change Branch to `django` using 
+```
+$ git checkout django
+```
+- Setup Virtual environment
+```
+$ python3 -m venv env
+```
+- Activate the virtual environment
+```
+$ source env/bin/activate
+```
+- Install dependencies using
+```
+$ pip install -r requirements.txt
+```
+- Make migrations using
+```
+$ python manage.py makemigrations
+```
+- Migrate Database
+```
+$ python manage.py migrate
+```
+- Create a superuser
+```
+$ python manage.py createsuperuser
+```
+- Setup Google OAuth 
+  - Login to the Django [admin panel](localhost:8000/admin). To the site model, we will add a new entry for `localhost:8000`
+  - Add Google credentials to the social application model as obtained from [Google Developers Console](https://console.developers.google.com/apis/credentials)
+  
+- Run server using
+```
+$ python manage.py runserver
+``` 
+  
+</details>
+
 ## Team:
 
 | S.No. | Name               | Role                       | GitHub Username:octocat:                             |
