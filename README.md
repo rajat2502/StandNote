@@ -47,6 +47,7 @@ The theme of our project idea is **Networking and Productivity**. We are reducin
 - [x] Works with all video conferencing tools - Google meet, Zoom, and more
 - [x] Get MoM for any online and offline meeting
 - [x] Automatically creates a meeting summary after each meeting
+- [x] Analyse the ambience of a meeting
 - [x] Share and edit the generated MoMs
 - [x] Dashboard section to organize the MoMs
 - [x] Send email to the user when the MoM is generated
