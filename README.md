@@ -1,16 +1,18 @@
-<div align="center"> <img align="center" alt="standnote" src="https://i.ibb.co/VHMQVSf/stand-note-full1.png" height='110' width='460'></div>
+<div align="center"> <a href="https://standnote.netlify.app/"> <img align="center" alt="standnote" src="https://i.ibb.co/VHMQVSf/stand-note-full1.png" height='90' width='360'> </a> </div>
 
 ## Turning Conversations into Actions
 
 Web conferencing and online meetings have become the new work culture nowadays. But somewhere along the lines, we often keep missing the crux of the discussions in these online meetings, and here comes our solution - **StandNote**. It is your easy to use online meeting assistant that backs you up with automated meeting minutes in every conversation. It will help you save time on board meetings, team management, and customer support such that you just focus on the conversation and never miss what’s important.
 
-It could be used along with all video conferencing tools - Google meet, Zoom, Blue Jeans, GoToMeeting, Microsoft Teams, and more. What’s more special is - using our unique machine learning algorithms, it will extract essential Action Items, Decisions, and crucial Insights, and transcript and turn them into a comprehensive, collaborative meeting summary. It will be packed with a bunch of important integrations like - Slack, GitHub, Keep, Notion to further ease your work life.
+StandNote also fits into the current online education scenario where most of the classes take place over online platforms like Google Meet and Zoom. We help students with quick and concise notes that help them to revise and memorize the concepts better.
 
 ## Links
 
-**Download from Chrome Web Store**: https://chrome.google.com/webstore/detail/standnote/emgbjefldokjjjoofmidcnigmienlclm <br/>
-**Instructions:** https://github.com/rajat2502/StandNote/blob/master/HOW_TO_USE.md <br/>
-**Web Application**: https://standnote.netlify.app/
+<a href="https://chrome.google.com/webstore/detail/standnote/emgbjefldokjjjoofmidcnigmienlclm"><img src="https://tunnello.com/wp-content/uploads/2018/09/available-chrome-store-tunnello.png" alt="Google Chrome Web Store" height='90' width='250'/></a>
+
+- **Chrome Extension**: https://bit.ly/StandNote-Extension <br/>
+- **Instructions:** https://github.com/rajat2502/StandNote/blob/master/HOW_TO_USE.md <br/>
+- **Web Application**: https://standnote.netlify.app/
 
 ## Theme:
 
@@ -32,7 +34,7 @@ The theme of our project idea is **Networking and Productivity**. We are reducin
 
 - [x] Remove the Distraction of Note-Taking
 - [x] Reduce Ineffective Meetings
-- [x] Help People Do Their Best Work
+- [x] Works with all video conferencing tools - Google meet, Zoom, and more
 - [x] Get MoM for any online and offline meeting
 - [x] Automatically creates a meeting summary after each meeting
 - [x] Share and edit the generated MoMs
