@@ -5,7 +5,7 @@
 ![Visitor Count](http://estruyf-github.azurewebsites.net/api/VisitorHit?user=rajat2502&repo=StandNote-visitors-badge&countColorcountColor&countColor=%237B1E7A) ![Microsoft Teams](https://img.shields.io/badge/Microsoft_Teams-6264A7?style=for-the-badge&logo=microsoft-teams&logoColor=white) ![Google Meet](https://img.shields.io/badge/Google-Meet-%23005E3C?style=for-the-badge) ![Zoom](https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white) ![Notion](https://img.shields.io/badge/Push%20To-Notion%20-%23000000?style=for-the-badge)
 
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) ![Maintenance](https://img.shields.io/maintenance/yes/2020)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) ![Maintenance](https://img.shields.io/maintenance/yes/2021)
 
 
 Web conferencing and online meetings have become the new work culture nowadays. But somewhere along the lines, we often keep missing the crux of the discussions in these online meetings, and here comes our solution - **StandNote**. It is your easy to use online meeting assistant that backs you up with automated meeting minutes in every conversation. It will help you save time on board meetings, team management, and customer support such that you just focus on the conversation and never miss what’s important.
