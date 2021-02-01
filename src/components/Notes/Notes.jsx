@@ -91,9 +91,9 @@ const Notes = ({ user }) => {
     setNoteData(res);
     setMom(res.markdown);
     await getNotionData();
-    await getSentimentData(res.content);
+    // Todo: await getSentimentData(res.content);
     setLoading(false);
-  }, [getNotionData, getSentimentData, id]);
+  }, [getNotionData, id]);
 
   useEffect(() => {
     getNoteData();
@@ -177,7 +177,8 @@ const Notes = ({ user }) => {
             <Icon name='score' /> &nbsp;&nbsp;
             <span>{noteData.score}/100</span>
           </p>
-          <div className='my-4'>
+          {/* Todo: */}
+          {/* <div className='my-4'>
             <p className='text-xl'>Ambience of meeting:</p>
             <p>
               <span title='Positive' className='pr-4 text-xl'>
@@ -190,7 +191,7 @@ const Notes = ({ user }) => {
                 &#x1F613; {sentiments.negative}
               </span>
             </p>
-          </div>
+          </div> */}
           <button
             onClick={pushToNotion}
             disabled={!hasNotion || submitting}
