@@ -21,9 +21,9 @@ const Form = ({ formType, formButton, setUser }) => {
     if (!res.err) {
       localStorage.setItem(
         'user',
-        JSON.stringify({ email: response.wt.cu, token: res.key })
+        JSON.stringify({ email: response.profileObj.email, token: res.key })
       );
-      setUser({ email: response.wt.cu });
+      setUser({ email: response.profileObj.email });
       history.push('/dashboard');
     } else {
       setError(res.err);
