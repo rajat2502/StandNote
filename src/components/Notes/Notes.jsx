@@ -7,7 +7,7 @@ import {
   updateNote,
   getNotionCredentials,
   pushMkdToNotion,
-  getSentiments,
+  // getSentiments,
 } from 'api';
 
 import Icon from 'components/Icon';
@@ -23,7 +23,7 @@ const Notes = ({ user }) => {
   const [hasNotion, setHasNotion] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [msg, setMsg] = useState('');
-  const [sentiments, setSentiments] = useState({});
+  // const [sentiments, setSentiments] = useState({});
 
   const changeEditing = () => {
     setEditing((state) => !state);
@@ -74,10 +74,10 @@ const Notes = ({ user }) => {
     setTimeout(() => setMsg(''), 3000);
   };
 
-  const getSentimentData = useCallback(async (content) => {
-    const res = await getSentiments(content);
-    setSentiments(res);
-  }, []);
+  // const getSentimentData = useCallback(async (content) => {
+  //   const res = await getSentiments(content);
+  //   setSentiments(res);
+  // }, []);
 
   const getNotionData = useCallback(async () => {
     const data = await getNotionCredentials(user.email);
