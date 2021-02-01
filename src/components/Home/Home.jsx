@@ -48,7 +48,7 @@ function Home() {
             </p>
             <a
               className='transition duration-500 ease-in-out text-lg font-bold rounded shadow hover:shadow-lg inline-flex mt-5 text-white py-3 px-4 items-center bg-green-600 hover:bg-green-700'
-              href='https://drive.google.com/drive/folders/1nELLlARVxaTZiPIou4B6CW6hR-lI6zZo'
+              href='https://chrome.google.com/webstore/detail/standnote/emgbjefldokjjjoofmidcnigmienlclm'
               target='_blank'
               rel='noreferrer'
             >
