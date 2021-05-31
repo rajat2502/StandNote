@@ -14,6 +14,7 @@ function App() {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
 
+  // Set user state
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
@@ -35,7 +36,7 @@ function App() {
   }
 
   return (
-    <div className='font-sans'>
+    <div className='app font-sans'>
       <Router>
         <ScrollToTop />
         <Switch>

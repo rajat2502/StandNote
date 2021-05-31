@@ -9,20 +9,22 @@ const Sidebar = ({ user, setUser }) => {
   const [selected, setSelected] = useState('');
   const [sidebarOpen, setSidebarOpenState] = useState(false);
 
+  // LogOut user and redirect to homepage
   const logOut = () => {
     localStorage.clear();
     setUser({});
     history.push('/');
   };
 
-  const changeSideBarState = () => setSidebarOpenState((state) => !state);
+  const changeSideBarState = () => {
+    setSidebarOpenState((state) => !state);
+  };
 
   useEffect(() => {
     setSelected(location.pathname);
     setSidebarOpenState(false);
   }, [location]);
 
-  console.log(sidebarOpen);
   return (
     <>
       <span

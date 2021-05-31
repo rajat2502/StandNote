@@ -14,6 +14,7 @@ const Form = ({ formType, formButton, setUser }) => {
   const [error, setError] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
 
+  // google response
   const responseGoogle = async (response) => {
     setError('');
     setIsDisabled(true);
@@ -31,11 +32,13 @@ const Form = ({ formType, formButton, setUser }) => {
     setIsDisabled(false);
   };
 
+  // check if credentials are valid
   const isValid = () => {
     if (formType === 'login') return email && password;
     else return email && password && password === confirmPassword;
   };
 
+  // Submit credentials and login/signup user
   const submitForm = async (e) => {
     e.preventDefault();
 

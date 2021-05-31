@@ -1,3 +1,4 @@
+// Returns the icons with their properties
 const getIcons = () => [
   {
     id: 1,
