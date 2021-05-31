@@ -42,14 +42,14 @@ function Dashboard({ user }) {
   }
 
   return (
-    <div className='p-4'>
+    <div className='flex justify-center flex-col p-4'>
       <h1 className='my-2 text-center text-4xl text-gray-700 font-bold'>
         All Meeting Notes
       </h1>
       <p className='m-6 font-bold text-gray-700'>
         Total Meeting(s): {notesData.length}
       </p>
-      <div className='mt-6 flex flex-wrap'>
+      <div className='mt-6 flex justify-center lg:justify-start flex-wrap'>
         {notesData.length ? (
           notesData.map((note) => (
             <NotesCard

@@ -6,4 +6,38 @@
   font-family: ProximaNovaRegular;
   src: url(../assets/font/ProximaNovaRegular.ttf);
 }
+
+.sidebar {
+  width: 100vw;
+  left: -100vw;
+  z-index: 5;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar-layout {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.toggler {
+  display: inline;
+}
+
+@media only screen and (min-width: 1000px) {
+  .sidebar {
+    width: 280px;
+    left: 0;
+  }
+
+  .sidebar-layout {
+    width: calc(100% - 280px) !important;
+    min-height: 100vh;
+    left: 280px !important;
+  }
+
+  .toggler {
+    display: none;
+  }
+}
+
 @tailwind utilities;

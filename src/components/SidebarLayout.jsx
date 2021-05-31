@@ -13,10 +13,7 @@ const SidebarLayout = ({ user, setUser }) => {
   return (
     <>
       <Sidebar user={user} setUser={setUser} />
-      <div
-        className='relative bg-gray-200'
-        style={{ width: 'calc(100% - 280px)', minHeight: '100vh', left: 280 }}
-      >
+      <div className='sidebar-layout relative bg-gray-200'>
         <Route
           path='/dashboard'
           exact
