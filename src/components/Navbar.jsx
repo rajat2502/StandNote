@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Navbar() {
+function Navbar({ user, setUser }) {
+  const logOut = () => {
+    localStorage.clear();
+    setUser({});
+  };
+
   return (
     <div className='md:flex md:items-center md:justify-between py-2 px-4 bg-green-500 text-white font-bold'>
       <Link to='/'>
@@ -12,7 +17,7 @@ function Navbar() {
         />
       </Link>
       <nav>
-        <ul className='list-reset md:flex md:items-center'>
+        <ul className='text-base list-reset md:flex md:items-center'>
           <li className='md:ml-4'>
             <Link
               className='block no-underline py-2 md:border-none md:p-0 font-bold'
@@ -29,14 +34,35 @@ function Navbar() {
               Dashboard
             </Link>
           </li>
-          <li className='md:ml-4'>
-            <Link
-              className='border-t block no-underline py-2 md:border-none md:p-0 font-bold'
-              to='/integrations'
-            >
-              Integrations
-            </Link>
-          </li>
+          {user.email ? (
+            <>
+              <li className='md:ml-4'>
+                <Link
+                  className='border-t block no-underline py-2 md:border-none md:p-0 font-bold'
+                  to='/integrations'
+                >
+                  Integrations
+                </Link>
+              </li>
+              <li className='md:ml-4'>
+                <button
+                  onClick={logOut}
+                  className='border-t block no-underline py-2 md:border-none md:p-0 font-bold focus:outline-none'
+                >
+                  LogOut
+                </button>
+              </li>
+            </>
+          ) : (
+            <li className='md:ml-4'>
+              <Link
+                className='block no-underline py-2 md:border-none md:p-0 font-bold'
+                to='/login'
+              >
+                Login
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
     </div>

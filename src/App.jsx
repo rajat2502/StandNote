@@ -40,7 +40,13 @@ function App() {
       <Router>
         <ScrollToTop />
         <Switch>
-          <Route path='/' exact component={Home} />
+          <Route
+            path='/'
+            exact
+            render={(props) => (
+              <Home user={user} setUser={setUser} {...props} />
+            )}
+          />
           <Route
             path='/register'
             exact

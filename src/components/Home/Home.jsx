@@ -26,11 +26,11 @@ const anim2 = {
   },
 };
 
-function Home() {
+function Home({ user, setUser }) {
   return (
     <>
       <div className='md:h-screen'>
-        <Navbar />
+        <Navbar user={user} setUser={setUser} />
         <div className='h-full flex flex-col items-center md:flex-row p-6 sm:p-12'>
           <div className='w-full md:w-1/2'>
             <h2 className='pt-6 text-left text-4xl md:text-6xl text-gray-700 font-bold'>

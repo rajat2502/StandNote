@@ -116,7 +116,7 @@ const Notes = ({ user }) => {
       <h1 className='my-2 text-center text-4xl text-gray-700 font-bold'>
         {noteData.title}
       </h1>
-      <div className='flex flex-wrap mx-6 mt-16'>
+      <div className='flex flex-wrap lg:flex-nowrap mx-6 mt-16'>
         <div className='w-full md:w-2/3'>
           <div className='flex items-center flex-wrap justify-center md:justify-between'>
             <h1 className='text-center my-4 text-3xl font-bold'>

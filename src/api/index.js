@@ -92,9 +92,9 @@ export const submitNotionCredentials = async (obj) => {
 export const pushMkdToNotion = async (obj) => {
   try {
     const res = await axios.post(`${baseUrl}/notion/note/`, obj);
-    console.log(res.data);
     return res.data;
-  } catch {
+  } catch (err) {
+    console.log(err.response);
     return { err: 'Something went wrong!' };
   }
 };
