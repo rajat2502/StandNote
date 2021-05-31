@@ -116,35 +116,35 @@ const Notes = ({ user }) => {
       <h1 className='my-2 text-center text-4xl text-gray-700 font-bold'>
         {noteData.title}
       </h1>
-      <div className='flex mx-6 mt-16'>
+      <div className='flex flex-wrap mx-6 mt-16'>
         <div className='w-full md:w-2/3'>
-          <div className='flex items-center justify-between'>
-            <h1 className='text-center mb-4 text-3xl font-bold'>
+          <div className='flex items-center flex-wrap justify-center md:justify-between'>
+            <h1 className='text-center my-4 text-3xl font-bold'>
               Meeting Notes
             </h1>
-            <div>
+            <div className='flex flex-wrap'>
               <button
-                className='focus:outline-none text-white bg-yellow-500 py-1 text-sm font-bold rounded-full px-4 mx-1'
+                className='focus:outline-none text-white bg-yellow-500 py-1 text-sm font-bold rounded-full px-4 my-2 mx-1'
                 onClick={viewFullText}
               >
                 View Full Text
               </button>
               <button
                 onClick={changeEditing}
-                className='focus:outline-none text-white bg-blue-500 py-1 text-sm font-bold rounded-full px-4 mx-2'
+                className='focus:outline-none text-white bg-blue-500 py-1 text-sm font-bold rounded-full px-4 my-2 mx-2'
               >
                 {editing ? 'Disable Edit' : 'Edit'}
               </button>
               <button
                 onClick={deleteNoteWithId}
-                className='focus:outline-none text-white bg-red-500 py-1 text-sm font-bold rounded-full px-4 mx-1'
+                className='focus:outline-none text-white bg-red-500 py-1 text-sm font-bold rounded-full px-4 my-2 mx-1'
               >
                 Delete
               </button>
               <button
                 disabled={noteData.markdown === mom || saving}
                 onClick={saveNotes}
-                className='focus:outline-none text-white bg-green-600 py-1 text-sm font-bold rounded-full px-4 mx-2'
+                className='focus:outline-none text-white bg-green-600 py-1 text-sm font-bold rounded-full px-4 my-2 mx-2'
               >
                 {saving ? 'Saving...' : 'Save'}
               </button>
@@ -162,18 +162,18 @@ const Notes = ({ user }) => {
             onChange={(e) => setMom(e.target.value)}
           ></textarea>
         </div>
-        <div className='text-2xl p-10 flex flex-col text-gray-600 font-bold mx-4'>
-          <p className='flex items-center mt-4'>
+        <div className='text-2xl p-4 lg:p-10 flex flex-wrap justify-center lg:justify-start lg:flex-col text-gray-600 font-bold lg:mx-4'>
+          <p className='flex items-center m-4'>
             <Icon name='date' /> &nbsp;&nbsp;
             <span>
               {new Date(noteData.created_at.slice(0, 10)).toLocaleDateString()}
             </span>
           </p>
-          <p className='flex items-center mt-4'>
+          <p className='flex items-center m-4'>
             <Icon name='time' /> &nbsp;&nbsp;&nbsp;
             <span>{noteData.duration}</span>
           </p>
-          <p className='flex items-center mt-4'>
+          <p className='flex items-center m-4'>
             <Icon name='score' /> &nbsp;&nbsp;
             <span>{noteData.score}/100</span>
           </p>
