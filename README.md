@@ -182,6 +182,7 @@ If you are interested in contributing to StandNote, please see the following:
 
 - [Contribution Guidelines](/CONTRIBUTING.md)
 - [Code of Conduct](/CODE_OF_CONDUCT.md)
+- [Learning Resources](/LEARN.md)
 
 ## Contributors ✨
 
