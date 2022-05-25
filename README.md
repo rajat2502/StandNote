@@ -12,7 +12,7 @@ StandNote also fits into the current online education scenario where most of the
 
 ## Links:
 
-<a target="_blank" href="https://chrome.google.com/webstore/detail/standnote/emgbjefldokjjjoofmidcnigmienlclm"><img src="https://tunnello.com/wp-content/uploads/2018/09/available-chrome-store-tunnello.png" alt="Google Chrome Web Store" height='90' width='250'/></a>
+<a target="_blank" href="https://chrome.google.com/webstore/detail/standnote/emgbjefldokjjjoofmidcnigmienlclm"><img src="https://user-images.githubusercontent.com/42115530/170352479-c34ce9ea-c8c5-4ee9-b24d-e11d061ef055.png" alt="Google Chrome Web Store" height='90' width='300'/></a>
 
 - **Chrome Extension**: https://bit.ly/StandNote-Extension <br/>
 - **Instructions:** https://github.com/rajat2502/StandNote/blob/master/HOW_TO_USE.md <br/>
