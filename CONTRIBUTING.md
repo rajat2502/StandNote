@@ -11,22 +11,20 @@ To set up the development environment, follow the instructions in README.
 
 ### Finding something to work on
 
-The issue tracker of EvalAI a good place to start. If you find something that interests you, comment on the thread and we’ll help get you started.
+If you find something that interests you, feel free to open an issue and we’ll help get you started.
 
 Alternatively, if you come across a new bug on the site, please file a new issue and comment if you would like to be assigned. The existing issues are tagged with one or more labels, based on the part of the website it touches, its importance etc., that can help you in selecting one.
 
-If neither of these seem appealing, please post on our channel and we will help find you something else to work on.
-
 ### Instructions to submit code
 
-Before you submit code, please talk to us via the issue tracker so we know you are working on it.
+Before you submit code, please get the issue assigned to you so we know you are working on it.
 
-Our central development branch is development. Coding is done on feature branches based off of development and merged into it once stable and reviewed. To submit code, follow these steps:
+We have definite branching structure, please find the details in [README.md](https://github.com/rajat2502/StandNote#github-repository-structure). To submit code, follow these steps:
 
-1.  Create a new branch off of development. Select a descriptive branch name.
+1.  Create a new branch off of master. Select a descriptive branch name.
 
     ```
-      git remote add upstream git@github.com:Cloud-CV/EvalAI.git
+      git remote add upstream git@github.com:rajat2502/StandNote.git
       git fetch upstream
       git checkout master
       git merge upstream/master
@@ -34,16 +32,9 @@ Our central development branch is development. Coding is done on feature branche
     ```
 
     We highly encourage using [black](http://www.github.com/psf/black)
-    to format your code. It sticks to PEP8 for the most part and is in
-    line with the rest of the repo. We have already set up [pre-commit
-    hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)
-    to run black and flake8. To activate the hooks, you just need to run
-    the following comamnd once:
-
-    ```
-      pre-commit install
-    ```
-
+    to format your backend code. It sticks to PEP8 for the most part and is in
+    line with the rest of the repo. 
+    
 2.  Commit and push code to your branch:
 
     - Commits should be self-contained and contain a descriptive commit message.
@@ -64,7 +55,7 @@ Our central development branch is development. Coding is done on feature branche
             Body of the commit message...
             ....
 
-    - Please make sure your code is well-formatted and adheres to PEP8 conventions (for Python) and the airbnb style guide (for JavaScript). For others (Lua, prototxt etc.) please ensure that the code is well-formatted and the style consistent.
+    - Please make sure your code is well-formatted and adheres to PEP8 conventions (for Python) and the airbnb style guide (for JavaScript).
     - Please ensure that your code is well tested.
     - We highly encourage to use `autopep8` to follow the PEP8 styling. Run the following command before creating the pull request:
 
@@ -73,11 +64,10 @@ Our central development branch is development. Coding is done on feature branche
             git push origin {{branch_name}}
 
     - Also, For Pretifying the Frontend Code Use `HTML/JS/CSS Pretifier`.
-    - For installing the Sublime Package Control Manager in Sublime-Text Editor use [this](https://packagecontrol.io/installation#st2) link. Also, If Sublime Package Control Manager is installed then install `HTML/JS/CSS Pretifier`.
 
 3.  Once the code is pushed, create a pull request:
 
-    - On your GitHub fork, select your branch and click “New pull request”. Select “master” as the base branch and your branch in the “compare” dropdown.
+    - On your GitHub fork, select your branch and click “New pull request”. Select the relevant branch as the base branch and your branch in the “compare” dropdown.
 
     If the code is mergeable (you get a message saying “Able to merge”), go ahead and create the pull request. Once you are done, comment below each review comment marking it as “Done”. Feel free to use the thread to have a discussion about comments that you don’t understand completely or don’t agree with.
 
