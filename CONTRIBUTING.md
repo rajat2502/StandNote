@@ -7,7 +7,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 ### Setting things up
 
-To set up the development environment, follow the instructions in README.
+To set up the development environment, follow the instructions in [README.md](https://github.com/rajat2502/StandNote#how-to-get-started-locally).
 
 ### Finding something to work on
 
