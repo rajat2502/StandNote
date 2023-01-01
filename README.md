@@ -1,3 +1,6 @@
+### Important Information:
+The project is currently not in a working condition as the Azure credits have expired, anyone can easily swap the azure credentials with their own and make it work.
+
 <div align="center"> <a href="https://standnote.netlify.app/"> <img align="center" alt="standnote" src="https://i.ibb.co/VHMQVSf/stand-note-full1.png" height='95' width='380'> </a> </div>
 
 ## Turning Conversations into Actions
